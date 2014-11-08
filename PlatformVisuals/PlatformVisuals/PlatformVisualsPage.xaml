@@ -23,7 +23,7 @@
 		<StackLayout Padding="5,0" Orientation="Horizontal" VerticalOptions="CenterAndExpand"
 		HorizontalOptions = "CenterAndExpand">
 
-		 	<Button Text = "4"
+		 	<Button Text = "Quatro"
 		            VerticalOptions="CenterAndExpand"
 		            HorizontalOptions="Center" />
 
