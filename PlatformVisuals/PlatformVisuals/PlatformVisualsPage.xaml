@@ -9,62 +9,86 @@
 	    <StackLayout Padding="5,0" Orientation="Horizontal" VerticalOptions="CenterAndExpand"
 	     HorizontalOptions = "CenterAndExpand">
 
-	    <Button Text = "1" />
-	 	<Button Text = "2"
+	    <Button x:Name = "Botao1"
+	    		Text = ""
+	    		Clicked = "OnButtonClicked1" />
+	 	<Button x:Name = "Botao2"
+	 			Text = ""
 	            VerticalOptions="CenterAndExpand"
-	            HorizontalOptions="Center" />
+	            HorizontalOptions="Center"
+	            Clicked = "OnButtonClicked2" />
 
-	    <Button Text = "3"
+	    <Button x:Name = "Botao3"
+	    		Text = ""
 	            VerticalOptions="CenterAndExpand"
-	            HorizontalOptions="Center" />
+	            HorizontalOptions="Center"
+	            Clicked = "OnButtonClicked3" />
 
 	    </StackLayout>
 
 		<StackLayout Padding="5,0" Orientation="Horizontal" VerticalOptions="CenterAndExpand"
 		HorizontalOptions = "CenterAndExpand">
 
-		 	<Button Text = "Quatro"
+		 	<Button x:Name = "Botao4"
+		 			Text = ""
 		            VerticalOptions="CenterAndExpand"
-		            HorizontalOptions="Center" />
+		            HorizontalOptions="Center"
+		            Clicked = "OnButtonClicked4" />
 
-		    <Button Text = "5"
+		    <Button x:Name = "Botao5"
+		    		Text = ""
 		            VerticalOptions="CenterAndExpand"
-		            HorizontalOptions="Center" />
+		            HorizontalOptions="Center"
+		            Clicked = "OnButtonClicked5" />
 
-		 	<Button Text = "6"
+		 	<Button x:Name = "Botao6"
+		 			Text = ""
 		            VerticalOptions="CenterAndExpand"
-		            HorizontalOptions="Center" />
+		            HorizontalOptions="Center"
+		            Clicked = "OnButtonClicked6" />
 		</StackLayout>
 		<StackLayout Padding="5,0" Orientation="Horizontal" VerticalOptions="CenterAndExpand"
 		HorizontalOptions = "CenterAndExpand">
 
 
-		    <Button Text = "7"
+		    <Button x:Name = "Botao7"
+		    		Text = ""
 		            VerticalOptions="CenterAndExpand"
-		            HorizontalOptions="Center" />
+		            HorizontalOptions="Center"
+		            Clicked = "OnButtonClicked7" />
 
-		 	<Button Text = "8"
+		 	<Button x:Name = "Botao8"
+		 			Text = ""
 		            VerticalOptions="CenterAndExpand"
-		            HorizontalOptions="Center" />
+		            HorizontalOptions="Center" 
+		            Clicked = "OnButtonClicked8"/>
 
-		    <Button Text = "9"
+		    <Button x:Name = "Botao9"
+		    		Text = ""
 		            VerticalOptions="CenterAndExpand"
-		            HorizontalOptions="Center" />
+		            HorizontalOptions="Center" 
+		            Clicked = "OnButtonClicked9"/>
 		</StackLayout> 
 		<StackLayout Padding="5,0" Orientation="Horizontal" VerticalOptions="CenterAndExpand"
 		HorizontalOptions = "CenterAndExpand">
 
-		 	<Button Text = "10"
-			            VerticalOptions="CenterAndExpand"
-			            HorizontalOptions="Center" />
+		 	<Button x:Name = "Botao10"
+		 			Text = ""
+			        VerticalOptions="CenterAndExpand"
+			        HorizontalOptions="Center"
+			        Clicked = "OnButtonClicked10" />
 
-			    <Button Text = "11"
-			            VerticalOptions="CenterAndExpand"
-			            HorizontalOptions="Center" />
+			<Button x:Name = "Botao11"
+		    		Text = ""
+		            VerticalOptions="CenterAndExpand"
+		            HorizontalOptions="Center"
+		            Clicked = "OnButtonClicked11" />
 
-			 	<Button Text = "12"
-			            VerticalOptions="CenterAndExpand"
-			            HorizontalOptions="Center" />
+		 	<Button x:Name = "Botao12"
+		 			Text = ""
+		            VerticalOptions="CenterAndExpand"
+		            HorizontalOptions="Center"
+		            Clicked = "OnButtonClicked12" />
 
 		</StackLayout>
   

@@ -8,6 +8,8 @@ namespace PlatformVisuals
         public static Page GetMainPage()
         {
             return new NavigationPage(new PlatformVisualsPage());
+
+			//Button a = new Button;
         }
     }
 }
