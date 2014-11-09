@@ -5,10 +5,11 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using Xamarin.Forms;
+using System.Collections;
 
 namespace PlatformVisuals
 {
-    public partial class PlatformVisualsPage
+    public partial class PlatformVisualsPage 
     {
         public PlatformVisualsPage()
         {
@@ -16,19 +17,94 @@ namespace PlatformVisuals
             InitializeComponent();
         }
 
-		private async Task WaitAndExecute (int milisec)
-		{
-			await Task.Delay (milisec);
-		}
 
 		public string ValidaCarta = "";
 		public Button BotaoAtivo ;
 
+		private int randomico ( int min, int max)
+		{
+		Random rnd = new Random();
+		int num = rnd.Next(min,max);
+			return num;
+
+
+		}
+
+
+
+
+
+	
+
+		// Valores de 10 a 15 ( 6 números)
+
+		// loop que define os valores aleatórios dos botoes
+
+//		public static void Shuffle<T>(this IList<T> list)  
+//		{  
+//			Random rng = new Random();  
+//			int n = list.Count;  
+//			while (n > 1) {  
+//				n--;  
+//				int k = rng.Next(n + 1);  
+//				T value = list[k];  
+//				list[k] = list[n];  
+//				list[n] = value;  
+//			}  
+//		}
+
+
+
+
+
+//
+//			for (int i = 0; i < 12; i++) {
+//
+//				int min = 10;
+//				int max = 15;
+//				int aux = randomico(min, max);
+//				int result = 15;
+//
+//			foreach (var item in lista) {
+//
+//				if item
+//
+//
+//			}
+//				if ()
+//				{
+//					lista[i] = result;
+//				}
+//
+//			}
+//		
+
+		//{10,11,12,13,14,15,10,11,12,13,14,15};
+		//public int[] copy = new int[12];
+		//public List<int> lista = new List<int>(10);
+		//lista.
+		//lista.Add(0);
+		//int qtd = Array.FindLastIndex(lista,false);
+		//int qtd = lista.GetLength(0); 
+		//int numToRemove = 4;
+		//int numIndex = Array.IndexOf(lista , numToRemove);
+		//lista = lista.Where((val, idx) => idx != numIndex).ToArray();
+
+//		ListadeCartoes lista = new ListadeCartoes();
+//		ListadeCartoes.Conteudo
 
 
 		void OnButtonClicked1(object sender, EventArgs args)
 		{
-			Botao1.Text="1";
+			int aleatorio = randomico(0,12);
+			//Botao1.Text= randomico(10,16).ToString();
+			//Botao1.Text= lista[aleatorio].ToString();
+			Botao1.Text= qtd.ToString();
+			//int pos = randomico (0,11);
+			//Botao1.Text= lista[pos].ToString();
+
+		//	Botao1.Text= qtd.ToString();
+
 			BotaoAtivo = Botao1;
 
 			if (ValidaCarta == "")

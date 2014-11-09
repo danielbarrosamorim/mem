@@ -39,6 +39,7 @@
       <DependentUpon>PlatformVisualsPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ListadeCartoes.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="PlatformVisualsPage.xaml">
