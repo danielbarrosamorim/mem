@@ -9,6 +9,7 @@ using Android.Widget;
 using Android.OS;
 
 using Xamarin.Forms.Platform.Android;
+using SQLite.Net.Platform.XamarinAndroid;
 
 namespace PlatformVisuals.Droid
 {
@@ -21,7 +22,9 @@ namespace PlatformVisuals.Droid
 
             Xamarin.Forms.Forms.Init(this, bundle);
 
-            SetPage(App.GetMainPage());
+			string dbPath = FileAccessHelper.GetLocalFilePath("memory.db3");
+			SetPage(App.GetMainPage(new SQLitePlatformAndroid(), dbPath));
+			//SetPage(App.GetMainPage(dbPath));
         }
     }
 }

@@ -11,10 +11,53 @@ namespace PlatformVisuals
 {
     public partial class PlatformVisualsPage 
     {
-        public PlatformVisualsPage()
+		public PlatformVisualsPage()
         {
 
             InitializeComponent();
+
+// Load table : memory
+
+			 App.MemoryRepo.InsertPosition (10);
+			 App.MemoryRepo.InsertPosition (11);
+			 App.MemoryRepo.InsertPosition (12);
+			 App.MemoryRepo.InsertPosition (13);
+			 App.MemoryRepo.InsertPosition (14);
+			 App.MemoryRepo.InsertPosition (15);
+			 App.MemoryRepo.InsertPosition (10);
+			 App.MemoryRepo.InsertPosition (11);
+			 App.MemoryRepo.InsertPosition (12);
+			 App.MemoryRepo.InsertPosition (13);
+			 App.MemoryRepo.InsertPosition (14);
+			 App.MemoryRepo.InsertPosition (15);
+
+// Load table : memory_rand
+
+
+
+
+
+
+
+
+//			App.
+//
+//			public void OnNewButtonClicked(object sender, EventArgs args)
+//			{
+//				statusMessage.Text = "";
+//
+//				App.PersonRepo.AddNewPerson(newPerson.Text);
+//				statusMessage.Text = App.PersonRepo.StatusMessage;
+//			}
+//
+//			public void OnGetButtonClicked(object sender, EventArgs args)
+//			{
+//				statusMessage.Text = "";
+//
+//				ObservableCollection<Person> people = new ObservableCollection<Person>(App.PersonRepo.GetAllPeople());
+//				peopleList.ItemsSource = people;
+//			}
+
         }
 
 
@@ -27,14 +70,8 @@ namespace PlatformVisuals
 		int num = rnd.Next(min,max);
 			return num;
 
-
 		}
-
-
-
-
-
-	
+			
 
 		// Valores de 10 a 15 ( 6 números)
 
@@ -90,16 +127,44 @@ namespace PlatformVisuals
 		//int numIndex = Array.IndexOf(lista , numToRemove);
 		//lista = lista.Where((val, idx) => idx != numIndex).ToArray();
 
-//		ListadeCartoes lista = new ListadeCartoes();
-//		ListadeCartoes.Conteudo
+		//ListadeCartoes lista = new ListadeCartoes();
+		//int qtd = 0;
+
+		static List<int> lista = new List<int>()
+		{
+			10,
+			11,
+			12,
+			13,
+			14,
+			15,
+			10,
+			11,
+			12,
+			13,
+			14,
+			15,
+		};
+
+//		int	aleatorio =
+//			from x in lista
+//				where x in randomico( 
+//			select x
+//
 
 
-		void OnButtonClicked1(object sender, EventArgs args)
+		//Entry  nome = new Entry;
+
+
+		//int qtd = lista.Quantidade(lista.lista);
+
+
+		void  OnButtonClicked1(object sender, EventArgs args)
 		{
 			int aleatorio = randomico(0,12);
-			//Botao1.Text= randomico(10,16).ToString();
+			Botao1.Text= randomico(10,16).ToString();
 			//Botao1.Text= lista[aleatorio].ToString();
-			Botao1.Text= qtd.ToString();
+			//Botao1.Text= qtd.ToString();
 			//int pos = randomico (0,11);
 			//Botao1.Text= lista[pos].ToString();
 
@@ -111,6 +176,9 @@ namespace PlatformVisuals
 			{
 				ValidaCarta = Botao1.Text;
 			}
+
+		
+
 
 		}
 
