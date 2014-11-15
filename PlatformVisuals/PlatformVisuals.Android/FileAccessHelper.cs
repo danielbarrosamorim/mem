@@ -10,6 +10,8 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 
+//[assembly: DependencyAttribute(typeof(FileAccessHelper))]
+
 namespace PlatformVisuals.Droid
 {
     public class FileAccessHelper

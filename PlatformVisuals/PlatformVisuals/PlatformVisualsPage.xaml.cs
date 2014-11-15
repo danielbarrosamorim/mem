@@ -18,249 +18,228 @@ namespace PlatformVisuals
 
 // Load table : memory
 
-			 App.MemoryRepo.InsertPosition (10);
-			 App.MemoryRepo.InsertPosition (11);
-			 App.MemoryRepo.InsertPosition (12);
-			 App.MemoryRepo.InsertPosition (13);
-			 App.MemoryRepo.InsertPosition (14);
-			 App.MemoryRepo.InsertPosition (15);
-			 App.MemoryRepo.InsertPosition (10);
-			 App.MemoryRepo.InsertPosition (11);
-			 App.MemoryRepo.InsertPosition (12);
-			 App.MemoryRepo.InsertPosition (13);
-			 App.MemoryRepo.InsertPosition (14);
-			 App.MemoryRepo.InsertPosition (15);
-
+//			 App.MemoryRepo.InsertPosition (10);
+//			 App.MemoryRepo.InsertPosition (11);
+//			 App.MemoryRepo.InsertPosition (12);
+//			 App.MemoryRepo.InsertPosition (13);
+//			 App.MemoryRepo.InsertPosition (14);
+//			 App.MemoryRepo.InsertPosition (15);
+//			 App.MemoryRepo.InsertPosition (10);
+//			 App.MemoryRepo.InsertPosition (11);
+//			 App.MemoryRepo.InsertPosition (12);
+//			 App.MemoryRepo.InsertPosition (13);
+//			 App.MemoryRepo.InsertPosition (14);
+//			 App.MemoryRepo.InsertPosition (15);
+//
 // Load table : memory_rand
 
-
-
-
-
-
-
-
-//			App.
-//
-//			public void OnNewButtonClicked(object sender, EventArgs args)
-//			{
-//				statusMessage.Text = "";
-//
-//				App.PersonRepo.AddNewPerson(newPerson.Text);
-//				statusMessage.Text = App.PersonRepo.StatusMessage;
-//			}
-//
-//			public void OnGetButtonClicked(object sender, EventArgs args)
-//			{
-//				statusMessage.Text = "";
-//
-//				ObservableCollection<Person> people = new ObservableCollection<Person>(App.PersonRepo.GetAllPeople());
-//				peopleList.ItemsSource = people;
-//			}
-
+			App.MemoryRepo.DeleteAllValues();
+			App.MemoryRepo.InsertValue (11);
+			App.MemoryRepo.InsertValue (10);
+			App.MemoryRepo.InsertValue (14);
+			App.MemoryRepo.InsertValue (13);
+			App.MemoryRepo.InsertValue (11);
+			App.MemoryRepo.InsertValue (10);
+			App.MemoryRepo.InsertValue (12);
+			App.MemoryRepo.InsertValue (12);
+			App.MemoryRepo.InsertValue (13);
+			App.MemoryRepo.InsertValue (15);
+			App.MemoryRepo.InsertValue (14);
+			App.MemoryRepo.InsertValue (15);
         }
 
-
-		public string ValidaCarta = "";
-		public Button BotaoAtivo ;
-
-		private int randomico ( int min, int max)
-		{
-		Random rnd = new Random();
-		int num = rnd.Next(min,max);
-			return num;
-
-		}
-			
-
-		// Valores de 10 a 15 ( 6 números)
-
-		// loop que define os valores aleatórios dos botoes
-
-//		public static void Shuffle<T>(this IList<T> list)  
-//		{  
-//			Random rng = new Random();  
-//			int n = list.Count;  
-//			while (n > 1) {  
-//				n--;  
-//				int k = rng.Next(n + 1);  
-//				T value = list[k];  
-//				list[k] = list[n];  
-//				list[n] = value;  
-//			}  
-//		}
-
-
-
-
-
-//
-//			for (int i = 0; i < 12; i++) {
-//
-//				int min = 10;
-//				int max = 15;
-//				int aux = randomico(min, max);
-//				int result = 15;
-//
-//			foreach (var item in lista) {
-//
-//				if item
-//
-//
-//			}
-//				if ()
-//				{
-//					lista[i] = result;
-//				}
-//
-//			}
-//		
-
-		//{10,11,12,13,14,15,10,11,12,13,14,15};
-		//public int[] copy = new int[12];
-		//public List<int> lista = new List<int>(10);
-		//lista.
-		//lista.Add(0);
-		//int qtd = Array.FindLastIndex(lista,false);
-		//int qtd = lista.GetLength(0); 
-		//int numToRemove = 4;
-		//int numIndex = Array.IndexOf(lista , numToRemove);
-		//lista = lista.Where((val, idx) => idx != numIndex).ToArray();
-
-		//ListadeCartoes lista = new ListadeCartoes();
-		//int qtd = 0;
-
-		static List<int> lista = new List<int>()
-		{
-			10,
-			11,
-			12,
-			13,
-			14,
-			15,
-			10,
-			11,
-			12,
-			13,
-			14,
-			15,
-		};
-
-//		int	aleatorio =
-//			from x in lista
-//				where x in randomico( 
-//			select x
-//
-
-
-		//Entry  nome = new Entry;
-
-
-		//int qtd = lista.Quantidade(lista.lista);
+//		public string ValidaCarta = "";
+		public Button BotaoAtivo  ;
+//		public Bu PosicaoAtiva ;
 
 
 		void  OnButtonClicked1(object sender, EventArgs args)
 		{
-			int aleatorio = randomico(0,12);
-			Botao1.Text= randomico(10,16).ToString();
-			//Botao1.Text= lista[aleatorio].ToString();
-			//Botao1.Text= qtd.ToString();
-			//int pos = randomico (0,11);
-			//Botao1.Text= lista[pos].ToString();
 
-		//	Botao1.Text= qtd.ToString();
+			var objeto1 = App.MemoryRepo.SelectValue(1);
+			Botao1.Text= objeto1.Value.ToString();
 
-			BotaoAtivo = Botao1;
-
-			if (ValidaCarta == "")
+			if (BotaoAtivo != null)
 			{
-				ValidaCarta = Botao1.Text;
+				if (BotaoAtivo.Text == Botao1.Text)
+				{
+					Botao1.Text = "";
+					BotaoAtivo.Text = "";
+					BotaoAtivo.IsEnabled = false;
+					Botao1.IsEnabled = false;
+				}
 			}
-
-		
+			BotaoAtivo = Botao1;
+			//PosicaoAtiva = Botao1;
 
 
 		}
 
 		void OnButtonClicked2(object sender, EventArgs args)
 		{
-			Botao2.Text="";
+
+			var objeto2 = App.MemoryRepo.SelectValue(2);
+			Botao2.Text= objeto2.Value.ToString();
+
+			if (BotaoAtivo != null) {
+				if (BotaoAtivo.Text == Botao2.Text) {
+//				Device.StartTimer (TimeSpan.FromSeconds (2), () => {
+					Botao2.Text = "";
+					BotaoAtivo.Text = "";
+					BotaoAtivo.IsEnabled = false;
+					Botao2.IsEnabled = false;
+//				});
+				}
+			}
+			BotaoAtivo = Botao2;
+
 
 		}
 
 		void OnButtonClicked3(object sender, EventArgs args)
 		{
-			Botao3.Text="1";
 
-			Device.StartTimer(TimeSpan.FromSeconds(2), () =>
-				{
-					//this.DateTime = DateTime.Now;
+			var objeto3 = App.MemoryRepo.SelectValue(3);
+			Botao3.Text= objeto3.Value.ToString();
 
-					if (ValidaCarta == Botao3.Text)
-					{
-						Botao3.IsVisible = false;
-						BotaoAtivo.IsVisible = false;
-					}
+			if (BotaoAtivo != null) {
+				if (BotaoAtivo.Text == Botao3.Text) {
+					//				Device.StartTimer (TimeSpan.FromSeconds (2), () => 
+					Botao3.Text = "";
+					BotaoAtivo.Text = "";
+					BotaoAtivo.IsEnabled = false;
+					Botao3.IsEnabled = false;
+				}
+			}
+			BotaoAtivo = Botao3;
 
-					return true;
-				});       
 
-
-
+//			Botao3.Text="1";
+//
+//			Device.StartTimer(TimeSpan.FromSeconds(2), () =>
+//				{
+//					//this.DateTime = DateTime.Now;
+//
+//					if (ValidaCarta == Botao3.Text)
+//					{
+//						Botao3.IsVisible = false;
+//						BotaoAtivo.IsVisible = false;
+//					}
+//
+//					return true;
+//				});       
 
 
 		}
 
 		void OnButtonClicked4(object sender, EventArgs args)
 		{
-			Botao4.Text="";
+			var objeto4 = App.MemoryRepo.SelectValue(4);
+			Botao4.Text= objeto4.Value.ToString();
+
+			if (BotaoAtivo != null) {
+				if (BotaoAtivo.Text == Botao4.Text) {
+					//				Device.StartTimer (TimeSpan.FromSeconds (2), () => {
+					Botao4.Text = "";
+					BotaoAtivo.Text = "";
+					BotaoAtivo.IsEnabled = false;
+					Botao4.IsEnabled = false;
+				}
+			}
+			BotaoAtivo = Botao4;
+
 
 		}
 
 		void OnButtonClicked5(object sender, EventArgs args)
 		{
-			Botao5.Text="";
+			var objeto = App.MemoryRepo.SelectValue(5);
+			int result = objeto.Value;
+			Botao5.Text= result.ToString();
+
+
+			if (BotaoAtivo != null) {
+				if (BotaoAtivo.Text == Botao5.Text) {
+					//				Device.StartTimer (TimeSpan.FromSeconds (2), () => {
+					Botao5.Text = "";
+					BotaoAtivo.Text = "";
+					BotaoAtivo.IsEnabled = false;
+					Botao5.IsEnabled = false;
+					//	BotaoAtivo.IsVisible = "";
+					//	BotaoAtivo = null;
+					//	return true;
+					//				});
+				}
+			}
+			BotaoAtivo = Botao5;
+
+
 
 		}
 
 		void OnButtonClicked6(object sender, EventArgs args)
 		{
-			Botao6.Text="";
+			var objeto = App.MemoryRepo.SelectValue(6);
+			int result = objeto.Value;
+			Botao6.Text= result.ToString();
+
+			if (BotaoAtivo != null) {
+				if (BotaoAtivo.Text == Botao6.Text) {
+					//				Device.StartTimer (TimeSpan.FromSeconds (2), () => {
+					Botao6.Text = "";
+					BotaoAtivo.Text = "";
+					BotaoAtivo.IsEnabled = false;
+					Botao6.IsEnabled = false;
+				}
+			}
+			BotaoAtivo = Botao6;
 
 		}
 
 		void OnButtonClicked7(object sender, EventArgs args)
 		{
-			Botao7.Text="";
+			var objeto = App.MemoryRepo.SelectValue(7);
+			int result = objeto.Value;
+			Botao7.Text= result.ToString();
 
 		}
 		void OnButtonClicked8(object sender, EventArgs args)
 		{
-			Botao8.Text="";
+			var objeto = App.MemoryRepo.SelectValue(8);
+			int result = objeto.Value;
+			Botao8.Text= result.ToString();
 
 		}
 
 		void OnButtonClicked9(object sender, EventArgs args)
 		{
-			Botao9.Text="";
+			var objeto = App.MemoryRepo.SelectValue(9);
+			int result = objeto.Value;
+			Botao9.Text= result.ToString();
 
 		}
 
 		void OnButtonClicked10(object sender, EventArgs args)
 		{
-			Botao10.Text="";
+			var objeto = App.MemoryRepo.SelectValue(10);
+			int result = objeto.Value;
+			Botao10.Text= result.ToString();
 
 		}
 
 		void OnButtonClicked11(object sender, EventArgs args)
 		{
-			Botao11.Text="";
+			var objeto = App.MemoryRepo.SelectValue(11);
+			int result = objeto.Value;
+			Botao11.Text= result.ToString();
 
 		}
 
 		void OnButtonClicked12(object sender, EventArgs args)
 		{
-			Botao12.Text="";
+			var objeto = App.MemoryRepo.SelectValue(12);
+			int result = objeto.Value;
+			Botao12.Text= result.ToString();
 
 		}
 			

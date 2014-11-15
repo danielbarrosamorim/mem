@@ -10,11 +10,11 @@ namespace PlatformVisuals
 {
 	public class App
 	{
-		public static PersonRepository MemoryRepo { get; private set; }
+		public static MemoryRepository MemoryRepo { get; private set; }
 		public static Page GetMainPage(ISQLitePlatform sqlitePlatform, string dbPath)
 		{
 			//set database path first, then retrieve main page
-			MemoryRepo = new PersonRepository(sqlitePlatform, dbPath);
+			MemoryRepo = new MemoryRepository(sqlitePlatform, dbPath);
 
 			return new PlatformVisualsPage();
 		}

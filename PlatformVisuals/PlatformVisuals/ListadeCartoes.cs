@@ -7,6 +7,7 @@ namespace PlatformVisuals
 	public  class ListadeCartoes 
 	{
 
+
 		static List<int> lista = new List<int>()
 		{
 			10,

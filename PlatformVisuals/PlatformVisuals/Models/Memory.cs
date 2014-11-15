@@ -21,28 +21,14 @@ namespace PlatformVisuals.Models
 	[Table("memory_randy")]
 	public class MemoryRand
 	{
-		[PrimaryKey, AutoIncrement]
+		[PrimaryKey,AutoIncrement]
 		public int Id { get; set; }
 
 		[MaxLength(10)]
 		public int Value { get; set; }
 
 	}
-
-
-
-//	[Table("memory")]
-//	public class Memory
-//	{
-//		[PrimaryKey, AutoIncrement]
-//		public int Id { get; set; }
-//
-//		[MaxLength(250), Unique]
-//		public string Name { get; set; }
-//
-//	}
-
-
+		
 	//	Buscar em ordem aleatório (TESTAR)
 //	SELECT foo FROM bar
 //	WHERE id >= (abs(random()) % (SELECT max(id) FROM bar))
