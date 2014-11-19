@@ -16,7 +16,10 @@ namespace PlatformVisuals
 			//set database path first, then retrieve main page
 			MemoryRepo = new MemoryRepository(sqlitePlatform, dbPath);
 
-			return new PlatformVisualsPage();
+			//return new PlatformVisualsPage();
+
+			return new MemoryView();
+
 		}
 	}
 }

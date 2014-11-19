@@ -4,17 +4,14 @@
 			 x:Class="PlatformVisuals.PlatformVisualsPage"
              Title="Visuals">
   
-<StackLayout Padding="1,0" Orientation="Vertical">
 
-	    <StackLayout Padding="5,0" Orientation="Horizontal" VerticalOptions="CenterAndExpand"
-	     HorizontalOptions = "CenterAndExpand">
+  <StackLayout Padding="1,0" Orientation="Vertical">
+
+	    <StackLayout Padding="5,0" Orientation="Horizontal" VerticalOptions="CenterAndExpand"  HorizontalOptions = "CenterAndExpand">
 
 	    <Button x:Name = "Botao1"
-	    		Text = ""
-	    		BorderWidth = "30"
-	    		BorderColor = "Red"
-	    		Clicked = "OnButtonClicked1"
-	    		 />
+	    		Text = "Bla"
+	    		Clicked = "OnButtonClicked1" />
 	 	<Button x:Name = "Botao2"
 	 			Text = ""
 	            VerticalOptions="CenterAndExpand"
@@ -26,6 +23,8 @@
 	            VerticalOptions="CenterAndExpand"
 	            HorizontalOptions="Center"
 	            Clicked = "OnButtonClicked3" />
+<!--
+	    </Grid>-->
 
 	    </StackLayout>
 

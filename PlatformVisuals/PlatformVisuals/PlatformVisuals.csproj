@@ -42,10 +42,16 @@
     <Compile Include="ListadeCartoes.cs" />
     <Compile Include="Models\Memory.cs" />
     <Compile Include="MemoryRepository.cs" />
+    <Compile Include="MemoryView.xaml.cs">
+      <DependentUpon>MemoryView.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="PlatformVisualsPage.xaml">
       <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MemoryView.xaml">
       <Generator>MSBuild:Compile</Generator>
     </EmbeddedResource>
   </ItemGroup>

@@ -50,6 +50,8 @@ namespace PlatformVisuals
 
 //		public string ValidaCarta = "";
 		public Button BotaoAtivo  ;
+		public Button PenultimoBotaoAtivo  ;
+
 //		public Bu PosicaoAtiva ;
 
 
@@ -63,10 +65,14 @@ namespace PlatformVisuals
 			{
 				if (BotaoAtivo.Text == Botao1.Text)
 				{
-					Botao1.Text = "";
-					BotaoAtivo.Text = "";
+					Botao1.Text = "X";
+					BotaoAtivo.Text = "X";
 					BotaoAtivo.IsEnabled = false;
 					Botao1.IsEnabled = false;
+				}
+				else {
+					Botao1.Text = "";
+					BotaoAtivo.Text = "";
 				}
 			}
 			BotaoAtivo = Botao1;
@@ -84,13 +90,19 @@ namespace PlatformVisuals
 			if (BotaoAtivo != null) {
 				if (BotaoAtivo.Text == Botao2.Text) {
 //				Device.StartTimer (TimeSpan.FromSeconds (2), () => {
-					Botao2.Text = "";
-					BotaoAtivo.Text = "";
+					Botao2.Text = "X";
+					BotaoAtivo.Text = "X";
 					BotaoAtivo.IsEnabled = false;
 					Botao2.IsEnabled = false;
 //				});
 				}
+				else {
+				//	Botao2.Text = "";
+				//	BotaoAtivo.Text = "";
+				}
 			}
+			//Botao2.IsEnabled = false;
+			PenultimoBotaoAtivo = BotaoAtivo;
 			BotaoAtivo = Botao2;
 
 
@@ -105,12 +117,18 @@ namespace PlatformVisuals
 			if (BotaoAtivo != null) {
 				if (BotaoAtivo.Text == Botao3.Text) {
 					//				Device.StartTimer (TimeSpan.FromSeconds (2), () => 
-					Botao3.Text = "";
-					BotaoAtivo.Text = "";
+					Botao3.Text = "X";
+					BotaoAtivo.Text = "X";
 					BotaoAtivo.IsEnabled = false;
 					Botao3.IsEnabled = false;
 				}
+				else {
+					Botao3.Text = "";
+					BotaoAtivo.Text = "";
+				}
+
 			}
+			PenultimoBotaoAtivo = BotaoAtivo;
 			BotaoAtivo = Botao3;
 
 
@@ -140,15 +158,19 @@ namespace PlatformVisuals
 			if (BotaoAtivo != null) {
 				if (BotaoAtivo.Text == Botao4.Text) {
 					//				Device.StartTimer (TimeSpan.FromSeconds (2), () => {
-					Botao4.Text = "";
-					BotaoAtivo.Text = "";
+					Botao4.Text = "X";
+					BotaoAtivo.Text = "X";
 					BotaoAtivo.IsEnabled = false;
 					Botao4.IsEnabled = false;
+				} 
+				else {
+				//	Botao4.Text = "";
+				//	BotaoAtivo.Text = "";
 				}
 			}
+
+			PenultimoBotaoAtivo = BotaoAtivo;
 			BotaoAtivo = Botao4;
-
-
 		}
 
 		void OnButtonClicked5(object sender, EventArgs args)
@@ -161,8 +183,8 @@ namespace PlatformVisuals
 			if (BotaoAtivo != null) {
 				if (BotaoAtivo.Text == Botao5.Text) {
 					//				Device.StartTimer (TimeSpan.FromSeconds (2), () => {
-					Botao5.Text = "";
-					BotaoAtivo.Text = "";
+					Botao5.Text = "X";
+					BotaoAtivo.Text = "X";
 					BotaoAtivo.IsEnabled = false;
 					Botao5.IsEnabled = false;
 					//	BotaoAtivo.IsVisible = "";
@@ -170,7 +192,12 @@ namespace PlatformVisuals
 					//	return true;
 					//				});
 				}
+				else {
+				//	Botao5.Text = "";
+				//	BotaoAtivo.Text = "";
+				}
 			}
+			PenultimoBotaoAtivo = BotaoAtivo;
 			BotaoAtivo = Botao5;
 
 
@@ -186,13 +213,18 @@ namespace PlatformVisuals
 			if (BotaoAtivo != null) {
 				if (BotaoAtivo.Text == Botao6.Text) {
 					//				Device.StartTimer (TimeSpan.FromSeconds (2), () => {
-					Botao6.Text = "";
-					BotaoAtivo.Text = "";
+					Botao6.Text = "X";
+					BotaoAtivo.Text = "X";
 					BotaoAtivo.IsEnabled = false;
 					Botao6.IsEnabled = false;
 				}
+				else {
+				//	Botao6.Text = "";
+				//	BotaoAtivo.Text = "";
+				}
 			}
-			BotaoAtivo = Botao6;
+			PenultimoBotaoAtivo = BotaoAtivo;
+			BotaoAtivo = Botao5;
 
 		}
 
@@ -202,12 +234,44 @@ namespace PlatformVisuals
 			int result = objeto.Value;
 			Botao7.Text= result.ToString();
 
+			if (BotaoAtivo != null) {
+				if (BotaoAtivo.Text == Botao6.Text) {
+					//				Device.StartTimer (TimeSpan.FromSeconds (2), () => {
+					Botao7.Text = "X";
+					BotaoAtivo.Text = "X";
+					BotaoAtivo.IsEnabled = false;
+					Botao7.IsEnabled = false;
+				}
+				else {
+				//	Botao7.Text = "";
+				//	BotaoAtivo.Text = "";
+				}
+			}
+			BotaoAtivo = Botao7;
+
+
+
 		}
 		void OnButtonClicked8(object sender, EventArgs args)
 		{
 			var objeto = App.MemoryRepo.SelectValue(8);
 			int result = objeto.Value;
 			Botao8.Text= result.ToString();
+
+			if (BotaoAtivo != null) {
+				if (BotaoAtivo.Text == Botao8.Text) {
+					//				Device.StartTimer (TimeSpan.FromSeconds (2), () => {
+					Botao8.Text = "X";
+					BotaoAtivo.Text = "X";
+					BotaoAtivo.IsEnabled = false;
+					Botao8.IsEnabled = false;
+				}
+				else {
+				//	Botao8.Text = "";
+				//	BotaoAtivo.Text = "";
+				}
+			}
+			BotaoAtivo = Botao8;
 
 		}
 
@@ -217,6 +281,22 @@ namespace PlatformVisuals
 			int result = objeto.Value;
 			Botao9.Text= result.ToString();
 
+
+			if (BotaoAtivo != null) {
+				if (BotaoAtivo.Text == Botao9.Text) {
+					//				Device.StartTimer (TimeSpan.FromSeconds (2), () => {
+					Botao9.Text = "X";
+					BotaoAtivo.Text = "X";
+					BotaoAtivo.IsEnabled = false;
+					Botao9.IsEnabled = false;
+				}
+				else {
+				//	Botao9.Text = "";
+				//	BotaoAtivo.Text = "";
+				}
+			}
+			BotaoAtivo = Botao9;
+
 		}
 
 		void OnButtonClicked10(object sender, EventArgs args)
@@ -224,6 +304,22 @@ namespace PlatformVisuals
 			var objeto = App.MemoryRepo.SelectValue(10);
 			int result = objeto.Value;
 			Botao10.Text= result.ToString();
+
+
+			if (BotaoAtivo != null) {
+				if (BotaoAtivo.Text == Botao10.Text) {
+					//				Device.StartTimer (TimeSpan.FromSeconds (2), () => {
+					Botao10.Text = "X";
+					BotaoAtivo.Text = "X";
+					BotaoAtivo.IsEnabled = false;
+					Botao10.IsEnabled = false;
+				}
+				else {
+				//	Botao10.Text = "";
+				//	BotaoAtivo.Text = "";
+				}
+			}
+			BotaoAtivo = Botao10;
 
 		}
 
@@ -233,6 +329,22 @@ namespace PlatformVisuals
 			int result = objeto.Value;
 			Botao11.Text= result.ToString();
 
+			if (BotaoAtivo != null) {
+				if (BotaoAtivo.Text == Botao11.Text) {
+					//				Device.StartTimer (TimeSpan.FromSeconds (2), () => {
+					Botao11.Text = "X";
+					BotaoAtivo.Text = "X";
+					BotaoAtivo.IsEnabled = false;
+					Botao11.IsEnabled = false;
+				}
+				else {
+				//	Botao11.Text = "";
+				//	BotaoAtivo.Text = "";
+				}
+			}
+			BotaoAtivo = Botao11;
+
+
 		}
 
 		void OnButtonClicked12(object sender, EventArgs args)
@@ -240,6 +352,23 @@ namespace PlatformVisuals
 			var objeto = App.MemoryRepo.SelectValue(12);
 			int result = objeto.Value;
 			Botao12.Text= result.ToString();
+
+			if (BotaoAtivo != null) {
+				if (BotaoAtivo.Text == Botao12.Text) {
+					//				Device.StartTimer (TimeSpan.FromSeconds (2), () => {
+					Botao12.Text = "X";
+					BotaoAtivo.Text = "X";
+					BotaoAtivo.IsEnabled = false;
+					Botao12.IsEnabled = false;
+				}
+				else {
+				//	Botao12.Text = "";
+				//	BotaoAtivo.Text = "";
+				}
+			}
+			BotaoAtivo = Botao12;
+
+
 
 		}
 			
