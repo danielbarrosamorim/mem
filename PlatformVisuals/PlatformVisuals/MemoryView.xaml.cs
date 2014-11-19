@@ -61,19 +61,22 @@ namespace PlatformVisuals
 			var objeto1 = App.MemoryRepo.SelectValue(1);
 			Botao1.Text= objeto1.Value.ToString();
 			Botao1.TextColor = Color.Black;
+			Botao1.BorderWidth = 3 ;
+			Botao1.BorderColor = Color.Red;
+
 
 
 			if (BotaoAtivo != null)
 			{
+				BotaoAtivo.BorderWidth = 0 ;
+				BotaoAtivo.BorderColor = Color.Accent;
 				if (BotaoAtivo.Text == Botao1.Text)
 				{
-					Device.StartTimer (TimeSpan.FromSeconds (2), () => 
-						{
-					Botao1.IsVisible = false;
-					BotaoAtivo.TextColor = Color.Yellow;
+	//				Device.StartTimer (TimeSpan.FromSeconds (1), () => 
+	//					{
 					BotaoAtivo.IsVisible = false;
-							return true;
-						});
+					Botao1.IsVisible = false;					
+	//					});
 				}
 				else {
 					Botao1.Text = "";
@@ -81,10 +84,22 @@ namespace PlatformVisuals
 				}
 			}
 			BotaoAtivo = Botao1;
+
 			//PosicaoAtiva = Botao1;
 
 
 		}
+
+//
+//		public Task RunMe(Func<Task> runner)
+//		{
+//
+//			if (runner != null)
+//				return Task.Run(runner);
+//
+//			return null;
+//		}
+
 
 		void OnButtonClicked2(object sender, EventArgs args)
 		{
@@ -92,8 +107,13 @@ namespace PlatformVisuals
 			var objeto2 = App.MemoryRepo.SelectValue(2);
 			Botao2.Text= objeto2.Value.ToString();
 			Botao2.TextColor = Color.Black;
+			Botao2.BorderWidth = 3 ;
+			Botao2.BorderColor = Color.Red;
 
 			if (BotaoAtivo != null) {
+				BotaoAtivo.BorderWidth = 0 ;
+				BotaoAtivo.BorderColor = Color.Accent;
+
 				if (BotaoAtivo.Text == Botao2.Text) {
 					//				Device.StartTimer (TimeSpan.FromSeconds (2), () => {
 					Botao2.IsVisible = false;
@@ -119,16 +139,20 @@ namespace PlatformVisuals
 			var objeto3 = App.MemoryRepo.SelectValue(3);
 			Botao3.Text= objeto3.Value.ToString();
 			Botao3.TextColor = Color.Black;
+			Botao3.BorderWidth = 3 ;
+			Botao3.BorderColor = Color.Red;
 
 			if (BotaoAtivo != null) {
+				BotaoAtivo.BorderWidth = 0 ;
+				BotaoAtivo.BorderColor = Color.Accent;
 				if (BotaoAtivo.Text == Botao3.Text) {
 					//				Device.StartTimer (TimeSpan.FromSeconds (2), () => 
 					Botao3.IsVisible = false;
 					BotaoAtivo.IsVisible = false;
 				}
 				else {
-					Botao3.Text = "";
-					BotaoAtivo.Text = "";
+				//	Botao3.Text = "";
+				//	BotaoAtivo.Text = "";
 				}
 
 			}
@@ -159,8 +183,14 @@ namespace PlatformVisuals
 			var objeto4 = App.MemoryRepo.SelectValue(4);
 			Botao4.Text= objeto4.Value.ToString();
 			Botao4.TextColor = Color.Black;
+			Botao4.BorderWidth = 3 ;
+			Botao4.BorderColor = Color.Red;
 
 			if (BotaoAtivo != null) {
+
+				BotaoAtivo.BorderWidth = 0 ;
+				BotaoAtivo.BorderColor = Color.Accent;
+
 				if (BotaoAtivo.Text == Botao4.Text) {
 					//				Device.StartTimer (TimeSpan.FromSeconds (2), () => {
 					Botao4.IsVisible = false;
@@ -182,9 +212,15 @@ namespace PlatformVisuals
 			int result = objeto.Value;
 			Botao5.Text= result.ToString();
 			Botao5.TextColor = Color.Black;
+			Botao5.BorderWidth = 3 ;
+			Botao5.BorderColor = Color.Red;
 
 
 			if (BotaoAtivo != null) {
+
+				BotaoAtivo.BorderWidth = 0 ;
+				BotaoAtivo.BorderColor = Color.Accent;
+
 				if (BotaoAtivo.Text == Botao5.Text) {
 					//				Device.StartTimer (TimeSpan.FromSeconds (2), () => {
 					Botao5.IsVisible = false;
@@ -212,8 +248,14 @@ namespace PlatformVisuals
 			int result = objeto.Value;
 			Botao6.Text= result.ToString();
 			Botao6.TextColor = Color.Black;
+			Botao6.BorderWidth = 3 ;
+			Botao6.BorderColor = Color.Red;
 
 			if (BotaoAtivo != null) {
+
+				BotaoAtivo.BorderWidth = 0 ;
+				BotaoAtivo.BorderColor = Color.Accent;
+
 				if (BotaoAtivo.Text == Botao6.Text) {
 					//				Device.StartTimer (TimeSpan.FromSeconds (2), () => {
 					Botao6.IsVisible = false;
@@ -225,7 +267,7 @@ namespace PlatformVisuals
 				}
 			}
 			//PenultimoBotaoAtivo = BotaoAtivo;
-			BotaoAtivo = Botao5;
+			BotaoAtivo = Botao6;
 
 		}
 
@@ -235,9 +277,15 @@ namespace PlatformVisuals
 			int result = objeto.Value;
 			Botao7.Text= result.ToString();
 			Botao7.TextColor = Color.Black;
+			Botao7.BorderWidth = 3 ;
+			Botao7.BorderColor = Color.Red;
 
 			if (BotaoAtivo != null) {
-				if (BotaoAtivo.Text == Botao6.Text) {
+
+				BotaoAtivo.BorderWidth = 0 ;
+				BotaoAtivo.BorderColor = Color.Accent;
+
+				if (BotaoAtivo.Text == Botao7.Text) {
 					//				Device.StartTimer (TimeSpan.FromSeconds (2), () => {
 					Botao7.IsVisible = false;
 					BotaoAtivo.IsVisible = false;
@@ -258,8 +306,14 @@ namespace PlatformVisuals
 			int result = objeto.Value;
 			Botao8.Text= result.ToString();
 			Botao8.TextColor = Color.Black;
+			Botao8.BorderWidth = 3 ;
+			Botao8.BorderColor = Color.Red;
 
 			if (BotaoAtivo != null) {
+
+				BotaoAtivo.BorderWidth = 0 ;
+				BotaoAtivo.BorderColor = Color.Accent;
+
 				if (BotaoAtivo.Text == Botao8.Text) {
 					//				Device.StartTimer (TimeSpan.FromSeconds (2), () => {
 					Botao8.IsVisible = false;
@@ -280,9 +334,15 @@ namespace PlatformVisuals
 			int result = objeto.Value;
 			Botao9.Text= result.ToString();
 			Botao9.TextColor = Color.Black;
+			Botao9.BorderWidth = 3 ;
+			Botao9.BorderColor = Color.Red;
 
 
 			if (BotaoAtivo != null) {
+
+				BotaoAtivo.BorderWidth = 0 ;
+				BotaoAtivo.BorderColor = Color.Accent;
+
 				if (BotaoAtivo.Text == Botao9.Text) {
 					//				Device.StartTimer (TimeSpan.FromSeconds (2), () => {
 					Botao9.IsVisible = false;
@@ -303,9 +363,15 @@ namespace PlatformVisuals
 			int result = objeto.Value;
 			Botao10.Text= result.ToString();
 			Botao10.TextColor = Color.Black;
+			Botao10.BorderWidth = 3 ;
+			Botao10.BorderColor = Color.Red;
 
 
 			if (BotaoAtivo != null) {
+
+				BotaoAtivo.BorderWidth = 0 ;
+				BotaoAtivo.BorderColor = Color.Accent;
+
 				if (BotaoAtivo.Text == Botao10.Text) {
 					//				Device.StartTimer (TimeSpan.FromSeconds (2), () => {
 					Botao10.IsVisible = false;
@@ -326,8 +392,14 @@ namespace PlatformVisuals
 			int result = objeto.Value;
 			Botao11.Text= result.ToString();
 			Botao11.TextColor = Color.Black;
+			Botao11.BorderWidth = 3 ;
+			Botao11.BorderColor = Color.Red;
 
 			if (BotaoAtivo != null) {
+
+				BotaoAtivo.BorderWidth = 0 ;
+				BotaoAtivo.BorderColor = Color.Accent;
+
 				if (BotaoAtivo.Text == Botao11.Text) {
 					//				Device.StartTimer (TimeSpan.FromSeconds (2), () => {
 					Botao11.IsVisible = false;
@@ -349,8 +421,14 @@ namespace PlatformVisuals
 			int result = objeto.Value;
 			Botao12.Text= result.ToString();
 			Botao12.TextColor = Color.Black;
+			Botao12.BorderWidth = 3 ;
+			Botao12.BorderColor = Color.Red;
 
 			if (BotaoAtivo != null) {
+
+				BotaoAtivo.BorderWidth = 0 ;
+				BotaoAtivo.BorderColor = Color.Accent;
+
 				if (BotaoAtivo.Text == Botao12.Text) {
 					//				Device.StartTimer (TimeSpan.FromSeconds (2), () => {
 					Botao12.IsVisible = false;
