@@ -48,400 +48,775 @@ namespace PlatformVisuals
 			App.MemoryRepo.InsertValue (15);
 		}
 
-		//		public string ValidaCarta = "";
-		public Button BotaoAtivo  ;
-		public Button PenultimoBotaoAtivo  ;
+		public Button ButAtivo  ;
+		public Button UltButAtivo  ;
+		public Button PenUltButAtivo  ;
+		public bool match = false;
+		public int x = 0 ;
+
 
 		//		public Bu PosicaoAtiva ;
 
 
-		void  OnButtonClicked1(object sender, EventArgs args)
+		void OnButtonClicked1(object sender, EventArgs args)
 		{
+
+			if (ButAtivo == null && UltButAtivo == null && PenUltButAtivo == null) {
+				//PenUltButAtivo = null;
+				//UltButAtivo = null;
+				ButAtivo = Botao1;
+			} else if (ButAtivo != null && UltButAtivo == null && PenUltButAtivo == null) {
+				//PenUltButAtivo = null;
+				UltButAtivo = ButAtivo;
+				ButAtivo = Botao1;
+			} else if (ButAtivo != null && UltButAtivo != null && PenUltButAtivo == null) {
+				PenUltButAtivo = UltButAtivo;
+				UltButAtivo =  ButAtivo ;
+				ButAtivo = Botao1;
+			} else if (ButAtivo != null && UltButAtivo != null && PenUltButAtivo != null) {
+				PenUltButAtivo = UltButAtivo;
+				UltButAtivo =  ButAtivo ;
+				ButAtivo = Botao1;
+			}
+
 
 			var objeto1 = App.MemoryRepo.SelectValue(1);
 			Botao1.Text= objeto1.Value.ToString();
 			Botao1.TextColor = Color.Black;
 			Botao1.BorderWidth = 3 ;
 			Botao1.BorderColor = Color.Red;
+			Botao1.IsEnabled = false;
+			//Botao1.Image = "Icon.png";
+			//Botao1.
+			x = x + 1;
 
-
-
-			if (BotaoAtivo != null)
+			if (UltButAtivo != null)
 			{
-				BotaoAtivo.BorderWidth = 0 ;
-				BotaoAtivo.BorderColor = Color.Accent;
-				if (BotaoAtivo.Text == Botao1.Text)
+
+				if (UltButAtivo.Text == ButAtivo.Text)
 				{
 	//				Device.StartTimer (TimeSpan.FromSeconds (1), () => 
 	//					{
-					BotaoAtivo.IsVisible = false;
-					Botao1.IsVisible = false;					
+					//match = true;
+
+					ButAtivo.IsVisible = false;
+					UltButAtivo.IsVisible = false;					
 	//					});
 				}
-				else {
-					Botao1.Text = "";
-					BotaoAtivo.Text = "";
-				}
 			}
-			BotaoAtivo = Botao1;
 
-			//PosicaoAtiva = Botao1;
+			if (UltButAtivo != null && PenUltButAtivo != null && x == 3)
+			{
+				UltButAtivo.BorderWidth = 0 ;
+				UltButAtivo.BorderColor = Color.Accent;
+				UltButAtivo.TextColor = Color.White;
+				UltButAtivo.IsEnabled = true;
 
+				PenUltButAtivo.BorderWidth = 0 ;
+				PenUltButAtivo.BorderColor = Color.Accent;
+				PenUltButAtivo.TextColor = Color.White;
+				PenUltButAtivo.IsEnabled = true;
 
+				x = 1;
+
+			}
+//			else if (UltButAtivo != null && PenUltButAtivo != null && match == true)
+//			{
+//				PenUltButAtivo.BorderWidth = 0 ;
+//				PenUltButAtivo.BorderColor = Color.Accent;
+//				PenUltButAtivo.TextColor = Color.White;
+//			}
+				
 		}
-
-//
-//		public Task RunMe(Func<Task> runner)
-//		{
-//
-//			if (runner != null)
-//				return Task.Run(runner);
-//
-//			return null;
-//		}
-
-
+			
 		void OnButtonClicked2(object sender, EventArgs args)
 		{
+
+			if (ButAtivo == null && UltButAtivo == null && PenUltButAtivo == null) {
+				//PenUltButAtivo = null;
+				//UltButAtivo = null;
+				ButAtivo = Botao2;
+			} else if (ButAtivo != null && UltButAtivo == null && PenUltButAtivo == null) {
+				//PenUltButAtivo = null;
+				UltButAtivo = ButAtivo;
+				ButAtivo = Botao2;
+			} else if (ButAtivo != null && UltButAtivo != null && PenUltButAtivo == null) {
+				PenUltButAtivo = UltButAtivo;
+				UltButAtivo =  ButAtivo ;
+				ButAtivo = Botao2;
+			} else if (ButAtivo != null && UltButAtivo != null && PenUltButAtivo != null) {
+				PenUltButAtivo = UltButAtivo;
+				UltButAtivo =  ButAtivo ;
+				ButAtivo = Botao2;
+			}
+
 
 			var objeto2 = App.MemoryRepo.SelectValue(2);
 			Botao2.Text= objeto2.Value.ToString();
 			Botao2.TextColor = Color.Black;
 			Botao2.BorderWidth = 3 ;
 			Botao2.BorderColor = Color.Red;
+			Botao2.IsEnabled = false;
+			//Botao1.Image = "Icon.png";
+			//Botao1.
+			x = x + 1;
 
-			if (BotaoAtivo != null) {
-				BotaoAtivo.BorderWidth = 0 ;
-				BotaoAtivo.BorderColor = Color.Accent;
+			if (UltButAtivo != null)
+			{
 
-				if (BotaoAtivo.Text == Botao2.Text) {
-					//				Device.StartTimer (TimeSpan.FromSeconds (2), () => {
-					Botao2.IsVisible = false;
-					BotaoAtivo.IsVisible = false;
-					;
-					//				});
-				}
-				else {
-					//	Botao2.Text = "";
-					//	BotaoAtivo.Text = "";
+				if (UltButAtivo.Text == ButAtivo.Text)
+				{
+					//				Device.StartTimer (TimeSpan.FromSeconds (1), () => 
+					//					{
+					match = true;
+					ButAtivo.IsVisible = false;
+					UltButAtivo.IsVisible = false;					
+					//					});
 				}
 			}
-			//Botao2.IsEnabled = false;
-			//PenultimoBotaoAtivo = BotaoAtivo;
-			BotaoAtivo = Botao2;
 
+			if (UltButAtivo != null && PenUltButAtivo != null && x == 3)
+			{
+				UltButAtivo.BorderWidth = 0 ;
+				UltButAtivo.BorderColor = Color.Accent;
+				UltButAtivo.TextColor = Color.White;
+				UltButAtivo.IsEnabled = true;
 
+				PenUltButAtivo.BorderWidth = 0 ;
+				PenUltButAtivo.BorderColor = Color.Accent;
+				PenUltButAtivo.TextColor = Color.White;
+				PenUltButAtivo.IsEnabled = true;
+
+				x = 1;
+			}
+//			else if (UltButAtivo != null && PenUltButAtivo != null && match == true)
+//			{
+//				PenUltButAtivo.BorderWidth = 0 ;
+//				PenUltButAtivo.BorderColor = Color.Accent;
+//				PenUltButAtivo.TextColor = Color.White;
+//			}
 		}
 
 		void OnButtonClicked3(object sender, EventArgs args)
 		{
+
+			if (ButAtivo == null && UltButAtivo == null && PenUltButAtivo == null) {
+				//PenUltButAtivo = null;
+				//UltButAtivo = null;
+				ButAtivo = Botao3;
+			} else if (ButAtivo != null && UltButAtivo == null && PenUltButAtivo == null) {
+				//PenUltButAtivo = null;
+				UltButAtivo = ButAtivo;
+				ButAtivo = Botao3;
+			} else if (ButAtivo != null && UltButAtivo != null && PenUltButAtivo == null) {
+				PenUltButAtivo = UltButAtivo;
+				UltButAtivo =  ButAtivo ;
+				ButAtivo = Botao3;
+			} else if (ButAtivo != null && UltButAtivo != null && PenUltButAtivo != null) {
+				PenUltButAtivo = UltButAtivo;
+				UltButAtivo =  ButAtivo ;
+				ButAtivo = Botao3;
+			}
+
 
 			var objeto3 = App.MemoryRepo.SelectValue(3);
 			Botao3.Text= objeto3.Value.ToString();
 			Botao3.TextColor = Color.Black;
 			Botao3.BorderWidth = 3 ;
 			Botao3.BorderColor = Color.Red;
+			Botao3.IsEnabled = false;
+			//Botao1.Image = "Icon.png";
+			//Botao1.
+			x = x + 1;
 
-			if (BotaoAtivo != null) {
-				BotaoAtivo.BorderWidth = 0 ;
-				BotaoAtivo.BorderColor = Color.Accent;
-				if (BotaoAtivo.Text == Botao3.Text) {
-					//				Device.StartTimer (TimeSpan.FromSeconds (2), () => 
-					Botao3.IsVisible = false;
-					BotaoAtivo.IsVisible = false;
-				}
-				else {
-				//	Botao3.Text = "";
-				//	BotaoAtivo.Text = "";
-				}
 
+			if (UltButAtivo != null)
+			{
+
+				if (UltButAtivo.Text == ButAtivo.Text)
+				{
+					match = true;
+					ButAtivo.IsVisible = false;
+					UltButAtivo.IsVisible = false;					
+				}
 			}
-			//PenultimoBotaoAtivo = BotaoAtivo;
-			BotaoAtivo = Botao3;
 
+			if (UltButAtivo != null && PenUltButAtivo != null && x == 3)
+			{
+				UltButAtivo.BorderWidth = 0 ;
+				UltButAtivo.BorderColor = Color.Accent;
+				UltButAtivo.TextColor = Color.White;
+				UltButAtivo.IsEnabled = true;
 
-			//			Botao3.Text="1";
-			//
-			//			Device.StartTimer(TimeSpan.FromSeconds(2), () =>
-			//				{
-			//					//this.DateTime = DateTime.Now;
-			//
-			//					if (ValidaCarta == Botao3.Text)
-			//					{
-			//						Botao3.IsVisible = false;
-			//						BotaoAtivo.IsVisible = false;
-			//					}
-			//
-			//					return true;
-			//				});       
+				PenUltButAtivo.BorderWidth = 0 ;
+				PenUltButAtivo.BorderColor = Color.Accent;
+				PenUltButAtivo.TextColor = Color.White;
+				PenUltButAtivo.IsEnabled = true;
 
+				x = 1;
+			}
+//			else if (UltButAtivo != null && PenUltButAtivo != null && match == true)
+//			{
+//				PenUltButAtivo.BorderWidth = 0 ;
+//				PenUltButAtivo.BorderColor = Color.Accent;
+//				PenUltButAtivo.TextColor = Color.White;
+//			}
 
 		}
 
 		void OnButtonClicked4(object sender, EventArgs args)
 		{
+
+			if (ButAtivo == null && UltButAtivo == null && PenUltButAtivo == null) {
+				//PenUltButAtivo = null;
+				//UltButAtivo = null;
+				ButAtivo = Botao4;
+			} else if (ButAtivo != null && UltButAtivo == null && PenUltButAtivo == null) {
+				//PenUltButAtivo = null;
+				UltButAtivo = ButAtivo;
+				ButAtivo = Botao4;
+			} else if (ButAtivo != null && UltButAtivo != null && PenUltButAtivo == null) {
+				PenUltButAtivo = UltButAtivo;
+				UltButAtivo =  ButAtivo ;
+				ButAtivo = Botao4;
+			} else if (ButAtivo != null && UltButAtivo != null && PenUltButAtivo != null) {
+				PenUltButAtivo = UltButAtivo;
+				UltButAtivo =  ButAtivo ;
+				ButAtivo = Botao4;
+			}
+
+
 			var objeto4 = App.MemoryRepo.SelectValue(4);
 			Botao4.Text= objeto4.Value.ToString();
 			Botao4.TextColor = Color.Black;
 			Botao4.BorderWidth = 3 ;
 			Botao4.BorderColor = Color.Red;
+			Botao4.IsEnabled = false;
+			//Botao1.Image = "Icon.png";
+			//Botao1.
+			x = x + 1;
 
-			if (BotaoAtivo != null) {
 
-				BotaoAtivo.BorderWidth = 0 ;
-				BotaoAtivo.BorderColor = Color.Accent;
+			if (UltButAtivo != null)
+			{
 
-				if (BotaoAtivo.Text == Botao4.Text) {
-					//				Device.StartTimer (TimeSpan.FromSeconds (2), () => {
-					Botao4.IsVisible = false;
-					BotaoAtivo.IsVisible = false;
-				} 
-				else {
-					//	Botao4.Text = "";
-					//	BotaoAtivo.Text = "";
+				if (UltButAtivo.Text == ButAtivo.Text)
+				{
+					match = true;
+					ButAtivo.IsVisible = false;
+					UltButAtivo.IsVisible = false;					
 				}
 			}
 
-			//PenultimoBotaoAtivo = BotaoAtivo;
-			BotaoAtivo = Botao4;
+			if (UltButAtivo != null && PenUltButAtivo != null && x == 3)
+			{
+				UltButAtivo.BorderWidth = 0 ;
+				UltButAtivo.BorderColor = Color.Accent;
+				UltButAtivo.TextColor = Color.White;
+				UltButAtivo.IsEnabled = true;
+
+				PenUltButAtivo.BorderWidth = 0 ;
+				PenUltButAtivo.BorderColor = Color.Accent;
+				PenUltButAtivo.TextColor = Color.White;
+				PenUltButAtivo.IsEnabled = true;
+
+				x = 1;
+			}
+//			else if (UltButAtivo != null && PenUltButAtivo != null && match == true)
+//			{
+//			    PenUltButAtivo.BorderWidth = 0 ;
+//				PenUltButAtivo.BorderColor = Color.Accent;
+//				PenUltButAtivo.TextColor = Color.White;
+//			}
+
+
+
 		}
 
 		void OnButtonClicked5(object sender, EventArgs args)
 		{
-			var objeto = App.MemoryRepo.SelectValue(5);
-			int result = objeto.Value;
-			Botao5.Text= result.ToString();
+
+			if (ButAtivo == null && UltButAtivo == null && PenUltButAtivo == null) {
+				//PenUltButAtivo = null;
+				//UltButAtivo = null;
+				ButAtivo = Botao5;
+			} else if (ButAtivo != null && UltButAtivo == null && PenUltButAtivo == null) {
+				//PenUltButAtivo = null;
+				UltButAtivo = ButAtivo;
+				ButAtivo = Botao5;
+			} else if (ButAtivo != null && UltButAtivo != null && PenUltButAtivo == null) {
+				PenUltButAtivo = UltButAtivo;
+				UltButAtivo =  ButAtivo ;
+				ButAtivo = Botao5;
+			} else if (ButAtivo != null && UltButAtivo != null && PenUltButAtivo != null) {
+				PenUltButAtivo = UltButAtivo;
+				UltButAtivo =  ButAtivo ;
+				ButAtivo = Botao5;
+			}
+
+
+			var objeto5 = App.MemoryRepo.SelectValue(5);
+			Botao5.Text= objeto5.Value.ToString();
 			Botao5.TextColor = Color.Black;
 			Botao5.BorderWidth = 3 ;
 			Botao5.BorderColor = Color.Red;
+			Botao5.IsEnabled = false;
+			//Botao1.Image = "Icon.png";
+			//Botao1.
+			x = x + 1;
 
 
-			if (BotaoAtivo != null) {
+			if (UltButAtivo != null)
+			{
 
-				BotaoAtivo.BorderWidth = 0 ;
-				BotaoAtivo.BorderColor = Color.Accent;
-
-				if (BotaoAtivo.Text == Botao5.Text) {
-					//				Device.StartTimer (TimeSpan.FromSeconds (2), () => {
-					Botao5.IsVisible = false;
-					BotaoAtivo.IsVisible = false;
-					//	BotaoAtivo.IsVisible = "";
-					//	BotaoAtivo = null;
-					//	return true;
-					//				});
-				}
-				else {
-					//	Botao5.Text = "";
-					//	BotaoAtivo.Text = "";
+				if (UltButAtivo.Text == ButAtivo.Text)
+				{
+					match = true;
+					ButAtivo.IsVisible = false;
+					UltButAtivo.IsVisible = false;					
 				}
 			}
-			//PenultimoBotaoAtivo = BotaoAtivo;
-			BotaoAtivo = Botao5;
 
+			if (UltButAtivo != null && PenUltButAtivo != null && x == 3)
+			{
+				UltButAtivo.BorderWidth = 0 ;
+				UltButAtivo.BorderColor = Color.Accent;
+				UltButAtivo.TextColor = Color.White;
+				UltButAtivo.IsEnabled = true;
 
+				PenUltButAtivo.BorderWidth = 0 ;
+				PenUltButAtivo.BorderColor = Color.Accent;
+				PenUltButAtivo.TextColor = Color.White;
+				PenUltButAtivo.IsEnabled = true;
+
+				x = 1;
+			}
+//			else if (UltButAtivo != null && PenUltButAtivo != null && match == true)
+//			{
+//				PenUltButAtivo.BorderWidth = 0 ;
+//				PenUltButAtivo.BorderColor = Color.Accent;
+//				PenUltButAtivo.TextColor = Color.White;
+//			}
 
 		}
 
 		void OnButtonClicked6(object sender, EventArgs args)
 		{
-			var objeto = App.MemoryRepo.SelectValue(6);
-			int result = objeto.Value;
-			Botao6.Text= result.ToString();
+
+			if (ButAtivo == null && UltButAtivo == null && PenUltButAtivo == null) {
+				//PenUltButAtivo = null;
+				//UltButAtivo = null;
+				ButAtivo = Botao6;
+			} else if (ButAtivo != null && UltButAtivo == null && PenUltButAtivo == null) {
+				//PenUltButAtivo = null;
+				UltButAtivo = ButAtivo;
+				ButAtivo = Botao6;
+			} else if (ButAtivo != null && UltButAtivo != null && PenUltButAtivo == null) {
+				PenUltButAtivo = UltButAtivo;
+				UltButAtivo =  ButAtivo ;
+				ButAtivo = Botao6;
+			} else if (ButAtivo != null && UltButAtivo != null && PenUltButAtivo != null) {
+				PenUltButAtivo = UltButAtivo;
+				UltButAtivo =  ButAtivo ;
+				ButAtivo = Botao6;
+			}
+
+
+			var objeto6 = App.MemoryRepo.SelectValue(6);
+			Botao6.Text= objeto6.Value.ToString();
 			Botao6.TextColor = Color.Black;
 			Botao6.BorderWidth = 3 ;
 			Botao6.BorderColor = Color.Red;
+			Botao6.IsEnabled = false;
+			//Botao1.Image = "Icon.png";
+			//Botao1.
+			x = x + 1;
 
-			if (BotaoAtivo != null) {
 
-				BotaoAtivo.BorderWidth = 0 ;
-				BotaoAtivo.BorderColor = Color.Accent;
+			if (UltButAtivo != null)
+			{
 
-				if (BotaoAtivo.Text == Botao6.Text) {
-					//				Device.StartTimer (TimeSpan.FromSeconds (2), () => {
-					Botao6.IsVisible = false;
-					BotaoAtivo.IsVisible = false;
-				}
-				else {
-					//	Botao6.Text = "";
-					//	BotaoAtivo.Text = "";
+				if (UltButAtivo.Text == ButAtivo.Text)
+				{
+					match = true;
+					ButAtivo.IsVisible = false;
+					UltButAtivo.IsVisible = false;					
 				}
 			}
-			//PenultimoBotaoAtivo = BotaoAtivo;
-			BotaoAtivo = Botao6;
+
+			if (UltButAtivo != null && PenUltButAtivo != null && x == 3)
+			{
+				UltButAtivo.BorderWidth = 0 ;
+				UltButAtivo.BorderColor = Color.Accent;
+				UltButAtivo.TextColor = Color.White;
+				UltButAtivo.IsEnabled = true;
+
+				PenUltButAtivo.BorderWidth = 0 ;
+				PenUltButAtivo.BorderColor = Color.Accent;
+				PenUltButAtivo.TextColor = Color.White;
+				PenUltButAtivo.IsEnabled = true;
+
+				x = 1;
+
+			}
+//			else if (UltButAtivo != null && PenUltButAtivo != null && match == true)
+//			{
+//				PenUltButAtivo.BorderWidth = 0 ;
+//				PenUltButAtivo.BorderColor = Color.Accent;
+//				PenUltButAtivo.TextColor = Color.White;
+//			}
 
 		}
 
 		void OnButtonClicked7(object sender, EventArgs args)
 		{
-			var objeto = App.MemoryRepo.SelectValue(7);
-			int result = objeto.Value;
-			Botao7.Text= result.ToString();
+			if (ButAtivo == null && UltButAtivo == null && PenUltButAtivo == null) {
+				//PenUltButAtivo = null;
+				//UltButAtivo = null;
+				ButAtivo = Botao7;
+			} else if (ButAtivo != null && UltButAtivo == null && PenUltButAtivo == null) {
+				//PenUltButAtivo = null;
+				UltButAtivo = ButAtivo;
+				ButAtivo = Botao7;
+			} else if (ButAtivo != null && UltButAtivo != null && PenUltButAtivo == null) {
+				PenUltButAtivo = UltButAtivo;
+				UltButAtivo =  ButAtivo ;
+				ButAtivo = Botao7;
+			} else if (ButAtivo != null && UltButAtivo != null && PenUltButAtivo != null) {
+				PenUltButAtivo = UltButAtivo;
+				UltButAtivo =  ButAtivo ;
+				ButAtivo = Botao7;
+			}
+
+
+			var objeto7 = App.MemoryRepo.SelectValue(7);
+			Botao7.Text= objeto7.Value.ToString();
 			Botao7.TextColor = Color.Black;
 			Botao7.BorderWidth = 3 ;
 			Botao7.BorderColor = Color.Red;
+			Botao7.IsEnabled = false;
+			//Botao1.Image = "Icon.png";
+			//Botao1.
+			x = x + 1;
 
-			if (BotaoAtivo != null) {
+			if (UltButAtivo != null)
+			{
 
-				BotaoAtivo.BorderWidth = 0 ;
-				BotaoAtivo.BorderColor = Color.Accent;
-
-				if (BotaoAtivo.Text == Botao7.Text) {
-					//				Device.StartTimer (TimeSpan.FromSeconds (2), () => {
-					Botao7.IsVisible = false;
-					BotaoAtivo.IsVisible = false;
-				}
-				else {
-					//	Botao7.Text = "";
-					//	BotaoAtivo.Text = "";
+				if (UltButAtivo.Text == ButAtivo.Text)
+				{
+					ButAtivo.IsVisible = false;
+					UltButAtivo.IsVisible = false;					
 				}
 			}
-			BotaoAtivo = Botao7;
 
+			if (UltButAtivo != null && PenUltButAtivo != null && x == 3)
+			{
+				UltButAtivo.BorderWidth = 0 ;
+				UltButAtivo.BorderColor = Color.Accent;
+				UltButAtivo.TextColor = Color.White;
+				UltButAtivo.IsEnabled = true;
+
+				PenUltButAtivo.BorderWidth = 0 ;
+				PenUltButAtivo.BorderColor = Color.Accent;
+				PenUltButAtivo.TextColor = Color.White;
+				PenUltButAtivo.IsEnabled = true;
+
+				x = 1;
+
+			}
 
 
 		}
+
 		void OnButtonClicked8(object sender, EventArgs args)
 		{
-			var objeto = App.MemoryRepo.SelectValue(8);
-			int result = objeto.Value;
-			Botao8.Text= result.ToString();
+			if (ButAtivo == null && UltButAtivo == null && PenUltButAtivo == null) {
+				//PenUltButAtivo = null;
+				//UltButAtivo = null;
+				ButAtivo = Botao8;
+			} else if (ButAtivo != null && UltButAtivo == null && PenUltButAtivo == null) {
+				//PenUltButAtivo = null;
+				UltButAtivo = ButAtivo;
+				ButAtivo = Botao8;
+			} else if (ButAtivo != null && UltButAtivo != null && PenUltButAtivo == null) {
+				PenUltButAtivo = UltButAtivo;
+				UltButAtivo =  ButAtivo ;
+				ButAtivo = Botao8;
+			} else if (ButAtivo != null && UltButAtivo != null && PenUltButAtivo != null) {
+				PenUltButAtivo = UltButAtivo;
+				UltButAtivo =  ButAtivo ;
+				ButAtivo = Botao8;
+			}
+
+
+			var objeto8 = App.MemoryRepo.SelectValue(8);
+			Botao8.Text= objeto8.Value.ToString();
 			Botao8.TextColor = Color.Black;
 			Botao8.BorderWidth = 3 ;
 			Botao8.BorderColor = Color.Red;
+			Botao8.IsEnabled = false;
+			//Botao1.Image = "Icon.png";
+			//Botao1.
+			x = x + 1;
 
-			if (BotaoAtivo != null) {
+			if (UltButAtivo != null)
+			{
 
-				BotaoAtivo.BorderWidth = 0 ;
-				BotaoAtivo.BorderColor = Color.Accent;
-
-				if (BotaoAtivo.Text == Botao8.Text) {
-					//				Device.StartTimer (TimeSpan.FromSeconds (2), () => {
-					Botao8.IsVisible = false;
-					BotaoAtivo.IsVisible = false;
-				}
-				else {
-					//	Botao8.Text = "";
-					//	BotaoAtivo.Text = "";
+				if (UltButAtivo.Text == ButAtivo.Text)
+				{
+					ButAtivo.IsVisible = false;
+					UltButAtivo.IsVisible = false;					
 				}
 			}
-			BotaoAtivo = Botao8;
 
+			if (UltButAtivo != null && PenUltButAtivo != null && x == 3)
+			{
+				UltButAtivo.BorderWidth = 0 ;
+				UltButAtivo.BorderColor = Color.Accent;
+				UltButAtivo.TextColor = Color.White;
+				UltButAtivo.IsEnabled = true;
+
+				PenUltButAtivo.BorderWidth = 0 ;
+				PenUltButAtivo.BorderColor = Color.Accent;
+				PenUltButAtivo.TextColor = Color.White;
+				PenUltButAtivo.IsEnabled = true;
+
+				x = 1;
+
+			}
 		}
 
 		void OnButtonClicked9(object sender, EventArgs args)
 		{
-			var objeto = App.MemoryRepo.SelectValue(9);
-			int result = objeto.Value;
-			Botao9.Text= result.ToString();
+			if (ButAtivo == null && UltButAtivo == null && PenUltButAtivo == null) {
+				//PenUltButAtivo = null;
+				//UltButAtivo = null;
+				ButAtivo = Botao9;
+			} else if (ButAtivo != null && UltButAtivo == null && PenUltButAtivo == null) {
+				//PenUltButAtivo = null;
+				UltButAtivo = ButAtivo;
+				ButAtivo = Botao9;
+			} else if (ButAtivo != null && UltButAtivo != null && PenUltButAtivo == null) {
+				PenUltButAtivo = UltButAtivo;
+				UltButAtivo =  ButAtivo ;
+				ButAtivo = Botao9;
+			} else if (ButAtivo != null && UltButAtivo != null && PenUltButAtivo != null) {
+				PenUltButAtivo = UltButAtivo;
+				UltButAtivo =  ButAtivo ;
+				ButAtivo = Botao9;
+			}
+
+
+			var objeto9 = App.MemoryRepo.SelectValue(9);
+			Botao9.Text= objeto9.Value.ToString();
 			Botao9.TextColor = Color.Black;
 			Botao9.BorderWidth = 3 ;
 			Botao9.BorderColor = Color.Red;
+			Botao9.IsEnabled = false;
+			//Botao1.Image = "Icon.png";
+			//Botao1.
+			x = x + 1;
 
+			if (UltButAtivo != null)
+			{
 
-			if (BotaoAtivo != null) {
-
-				BotaoAtivo.BorderWidth = 0 ;
-				BotaoAtivo.BorderColor = Color.Accent;
-
-				if (BotaoAtivo.Text == Botao9.Text) {
-					//				Device.StartTimer (TimeSpan.FromSeconds (2), () => {
-					Botao9.IsVisible = false;
-					BotaoAtivo.IsVisible = false;
-				}
-				else {
-					//	Botao9.Text = "";
-					//	BotaoAtivo.Text = "";
+				if (UltButAtivo.Text == ButAtivo.Text)
+				{
+					ButAtivo.IsVisible = false;
+					UltButAtivo.IsVisible = false;					
 				}
 			}
-			BotaoAtivo = Botao9;
+
+			if (UltButAtivo != null && PenUltButAtivo != null && x == 3)
+			{
+				UltButAtivo.BorderWidth = 0 ;
+				UltButAtivo.BorderColor = Color.Accent;
+				UltButAtivo.TextColor = Color.White;
+				UltButAtivo.IsEnabled = true;
+
+				PenUltButAtivo.BorderWidth = 0 ;
+				PenUltButAtivo.BorderColor = Color.Accent;
+				PenUltButAtivo.TextColor = Color.White;
+				PenUltButAtivo.IsEnabled = true;
+
+				x = 1;
+
+			}
 
 		}
 
 		void OnButtonClicked10(object sender, EventArgs args)
 		{
-			var objeto = App.MemoryRepo.SelectValue(10);
-			int result = objeto.Value;
-			Botao10.Text= result.ToString();
+			if (ButAtivo == null && UltButAtivo == null && PenUltButAtivo == null) {
+				//PenUltButAtivo = null;
+				//UltButAtivo = null;
+				ButAtivo = Botao10;
+			} else if (ButAtivo != null && UltButAtivo == null && PenUltButAtivo == null) {
+				//PenUltButAtivo = null;
+				UltButAtivo = ButAtivo;
+				ButAtivo = Botao10;
+			} else if (ButAtivo != null && UltButAtivo != null && PenUltButAtivo == null) {
+				PenUltButAtivo = UltButAtivo;
+				UltButAtivo =  ButAtivo ;
+				ButAtivo = Botao10;
+			} else if (ButAtivo != null && UltButAtivo != null && PenUltButAtivo != null) {
+				PenUltButAtivo = UltButAtivo;
+				UltButAtivo =  ButAtivo ;
+				ButAtivo = Botao10;
+			}
+
+
+			var objeto10 = App.MemoryRepo.SelectValue(10);
+			Botao10.Text= objeto10.Value.ToString();
 			Botao10.TextColor = Color.Black;
 			Botao10.BorderWidth = 3 ;
 			Botao10.BorderColor = Color.Red;
+			Botao10.IsEnabled = false;
+			//Botao1.Image = "Icon.png";
+			//Botao1.
+			x = x + 1;
 
+			if (UltButAtivo != null)
+			{
 
-			if (BotaoAtivo != null) {
-
-				BotaoAtivo.BorderWidth = 0 ;
-				BotaoAtivo.BorderColor = Color.Accent;
-
-				if (BotaoAtivo.Text == Botao10.Text) {
-					//				Device.StartTimer (TimeSpan.FromSeconds (2), () => {
-					Botao10.IsVisible = false;
-					BotaoAtivo.IsVisible = false;
-				}
-				else {
-					//	Botao10.Text = "";
-					//	BotaoAtivo.Text = "";
+				if (UltButAtivo.Text == ButAtivo.Text)
+				{
+					ButAtivo.IsVisible = false;
+					UltButAtivo.IsVisible = false;					
 				}
 			}
-			BotaoAtivo = Botao10;
 
+			if (UltButAtivo != null && PenUltButAtivo != null && x == 3)
+			{
+				UltButAtivo.BorderWidth = 0 ;
+				UltButAtivo.BorderColor = Color.Accent;
+				UltButAtivo.TextColor = Color.White;
+				UltButAtivo.IsEnabled = true;
+
+				PenUltButAtivo.BorderWidth = 0 ;
+				PenUltButAtivo.BorderColor = Color.Accent;
+				PenUltButAtivo.TextColor = Color.White;
+				PenUltButAtivo.IsEnabled = true;
+
+				x = 1;
+
+			}
 		}
 
 		void OnButtonClicked11(object sender, EventArgs args)
 		{
-			var objeto = App.MemoryRepo.SelectValue(11);
-			int result = objeto.Value;
-			Botao11.Text= result.ToString();
+			if (ButAtivo == null && UltButAtivo == null && PenUltButAtivo == null) {
+				//PenUltButAtivo = null;
+				//UltButAtivo = null;
+				ButAtivo = Botao11;
+			} else if (ButAtivo != null && UltButAtivo == null && PenUltButAtivo == null) {
+				//PenUltButAtivo = null;
+				UltButAtivo = ButAtivo;
+				ButAtivo = Botao11;
+			} else if (ButAtivo != null && UltButAtivo != null && PenUltButAtivo == null) {
+				PenUltButAtivo = UltButAtivo;
+				UltButAtivo =  ButAtivo ;
+				ButAtivo = Botao11;
+			} else if (ButAtivo != null && UltButAtivo != null && PenUltButAtivo != null) {
+				PenUltButAtivo = UltButAtivo;
+				UltButAtivo =  ButAtivo ;
+				ButAtivo = Botao11;
+			}
+
+
+			var objeto11 = App.MemoryRepo.SelectValue(11);
+			Botao11.Text= objeto11.Value.ToString();
 			Botao11.TextColor = Color.Black;
 			Botao11.BorderWidth = 3 ;
 			Botao11.BorderColor = Color.Red;
+			Botao11.IsEnabled = false;
+			//Botao1.Image = "Icon.png";
+			//Botao1.
+			x = x + 1;
 
-			if (BotaoAtivo != null) {
+			if (UltButAtivo != null)
+			{
 
-				BotaoAtivo.BorderWidth = 0 ;
-				BotaoAtivo.BorderColor = Color.Accent;
-
-				if (BotaoAtivo.Text == Botao11.Text) {
-					//				Device.StartTimer (TimeSpan.FromSeconds (2), () => {
-					Botao11.IsVisible = false;
-					BotaoAtivo.IsVisible = false;
-				}
-				else {
-					//	Botao11.Text = "";
-					//	BotaoAtivo.Text = "";
+				if (UltButAtivo.Text == ButAtivo.Text)
+				{
+					ButAtivo.IsVisible = false;
+					UltButAtivo.IsVisible = false;					
 				}
 			}
-			BotaoAtivo = Botao11;
 
+			if (UltButAtivo != null && PenUltButAtivo != null && x == 3)
+			{
+				UltButAtivo.BorderWidth = 0 ;
+				UltButAtivo.BorderColor = Color.Accent;
+				UltButAtivo.TextColor = Color.White;
+				UltButAtivo.IsEnabled = true;
 
+				PenUltButAtivo.BorderWidth = 0 ;
+				PenUltButAtivo.BorderColor = Color.Accent;
+				PenUltButAtivo.TextColor = Color.White;
+				PenUltButAtivo.IsEnabled = true;
+
+				x = 1;
+
+			}
 		}
 
 		void OnButtonClicked12(object sender, EventArgs args)
 		{
-			var objeto = App.MemoryRepo.SelectValue(12);
-			int result = objeto.Value;
-			Botao12.Text= result.ToString();
+			if (ButAtivo == null && UltButAtivo == null && PenUltButAtivo == null) {
+				//PenUltButAtivo = null;
+				//UltButAtivo = null;
+				ButAtivo = Botao12;
+			} else if (ButAtivo != null && UltButAtivo == null && PenUltButAtivo == null) {
+				//PenUltButAtivo = null;
+				UltButAtivo = ButAtivo;
+				ButAtivo = Botao12;
+			} else if (ButAtivo != null && UltButAtivo != null && PenUltButAtivo == null) {
+				PenUltButAtivo = UltButAtivo;
+				UltButAtivo =  ButAtivo ;
+				ButAtivo = Botao12;
+			} else if (ButAtivo != null && UltButAtivo != null && PenUltButAtivo != null) {
+				PenUltButAtivo = UltButAtivo;
+				UltButAtivo =  ButAtivo ;
+				ButAtivo = Botao12;
+			}
+
+
+			var objeto12 = App.MemoryRepo.SelectValue(12);
+			Botao12.Text= objeto12.Value.ToString();
 			Botao12.TextColor = Color.Black;
 			Botao12.BorderWidth = 3 ;
 			Botao12.BorderColor = Color.Red;
+			Botao12.IsEnabled = false;
+			//Botao1.Image = "Icon.png";
+			//Botao1.
+			x = x + 1;
 
-			if (BotaoAtivo != null) {
+			if (UltButAtivo != null)
+			{
 
-				BotaoAtivo.BorderWidth = 0 ;
-				BotaoAtivo.BorderColor = Color.Accent;
-
-				if (BotaoAtivo.Text == Botao12.Text) {
-					//				Device.StartTimer (TimeSpan.FromSeconds (2), () => {
-					Botao12.IsVisible = false;
-					BotaoAtivo.IsVisible = false;
-				}
-				else {
-					//	Botao12.Text = "";
-					//	BotaoAtivo.Text = "";
+				if (UltButAtivo.Text == ButAtivo.Text)
+				{
+					ButAtivo.IsVisible = false;
+					UltButAtivo.IsVisible = false;					
 				}
 			}
-			BotaoAtivo = Botao12;
 
+			if (UltButAtivo != null && PenUltButAtivo != null && x == 3)
+			{
+				UltButAtivo.BorderWidth = 0 ;
+				UltButAtivo.BorderColor = Color.Accent;
+				UltButAtivo.TextColor = Color.White;
+				UltButAtivo.IsEnabled = true;
 
+				PenUltButAtivo.BorderWidth = 0 ;
+				PenUltButAtivo.BorderColor = Color.Accent;
+				PenUltButAtivo.TextColor = Color.White;
+				PenUltButAtivo.IsEnabled = true;
+
+				x = 1;
+
+			}
 
 		}
 
