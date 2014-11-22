@@ -12,6 +12,10 @@ using Xamarin.Forms.Platform.Android;
 using SQLite.Net.Platform.XamarinAndroid;
 using System.IO;
 
+//[Activity(Label = "Xamarin.Forms.Labs.Sample.Droid", MainLauncher = true,
+//	ConfigurationChanges = ConfigChanges.Orientation | ConfigChanges.ScreenSize)]
+//public class MainActivity : XFormsApplicationDroid
+
 
 namespace PlatformVisuals.Droid
 {

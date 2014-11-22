@@ -11,14 +11,22 @@ namespace PlatformVisuals
 	public class App
 	{
 		public static MemoryRepository MemoryRepo { get; private set; }
+
+		public static MemoryImage MemoryImage { get; private set; }
+
 		public static Page GetMainPage(ISQLitePlatform sqlitePlatform, string dbPath)
 		{
 			//set database path first, then retrieve main page
 			MemoryRepo = new MemoryRepository(sqlitePlatform, dbPath);
 
+			MemoryImage = new MemoryImage(sqlitePlatform, dbPath);
+
+
 			//return new PlatformVisualsPage();
 
-			return new MemoryView();
+			//return new MemoryView();
+
+			return new MemoryViewImage();
 
 		}
 	}

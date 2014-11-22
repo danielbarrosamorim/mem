@@ -8,14 +8,14 @@ using System.Linq;
 
 namespace PlatformVisuals
 {
-    public class MemoryRepository
+    public class MemoryImage
     {
 
         private SQLiteConnection dbConn;
         
         public string StatusMessage { get; set; }
 
-        public MemoryRepository(ISQLitePlatform sqlitePlatform, string dbPath)
+        public MemoryImage(ISQLitePlatform sqlitePlatform, string dbPath)
         {
             //initialize a new SQLiteConnection 
             if (dbConn == null)
@@ -24,38 +24,16 @@ namespace PlatformVisuals
 
                 //create the Person table
             //    dbConn.CreateTable<Memory>();
-				dbConn.DropTable<MemoryRand> ();
-				dbConn.CreateTable<MemoryRand>();
+				dbConn.DropTable<TBImage> ();
+				dbConn.CreateTable<TBImage>();
             }
         }
-        
-//        public void InsertPosition(int position)
-//        {
-//            int result = 0;
-//            try
-//            {
-//                //basic validation to ensure a name was entered
-////                if (string.IsNullOrEmpty(position))
-////                    throw new Exception("Valid name required");
-//
-//                //insert a new person into the Person table
-//                result = dbConn.Insert(new Memory { Position = position});
-//                StatusMessage = string.Format("{0} record(s) added [Position: {1})", result, position);
-//            }
-//            catch (Exception ex)
-//            {
-//                StatusMessage = string.Format("Failed to add {0}. Error: {1}", position, ex.Message);
-//            }
-//
-//        }
 
-		public void InsertValue(int value)
+		public void InsertValue(int value, string img)
 		{
 			try
 			{
-				//insert a new person into the Memory_Rand table
-				dbConn.Insert(new MemoryRand {Value = value});
-				//StatusMessage = string.Format("{0} record(s) added [Position: {1})", result, value);
+				dbConn.Insert(new TBImage {Value = value , Img = img});
 			}
 			catch (Exception ex)
 			{
@@ -64,17 +42,14 @@ namespace PlatformVisuals
 
 		}
 
-		public MemoryRand SelectValue(int value)
+		public TBImage SelectValue(int value)
 		{
 
-			MemoryRand retorno = new MemoryRand();
+			TBImage retorno = new TBImage();
 
 			try
 			{
-				//Get a new Memory_Rand row
-
-				retorno = dbConn.Get<MemoryRand>(value);
-				//StatusMessage = string.Format("{0} record(s) added [Position: {1})", result, value);
+				retorno = dbConn.Get<TBImage>(value);
 			}
 			catch (Exception ex)
 			{
@@ -91,7 +66,7 @@ namespace PlatformVisuals
 			try
 			{
 				//insert a new person into the Memory_Rand table
-				dbConn.DeleteAll<MemoryRand>();
+				dbConn.DeleteAll<TBImage>();
 				//StatusMessage = string.Format("{0} record(s) added [Position: {1})", result, value);
 			}
 			catch (Exception ex)
@@ -108,7 +83,7 @@ namespace PlatformVisuals
 			try
 			{
 				//insert a new person into the Memory_Rand table
-				dbConn.DropTable<MemoryRand>();
+				dbConn.DropTable<TBImage>();
 				//StatusMessage = string.Format("{0} record(s) added [Position: {1})", result, value);
 			}
 			catch (Exception ex)

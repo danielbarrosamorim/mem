@@ -28,6 +28,22 @@ namespace PlatformVisuals.Models
 		public int Value { get; set; }
 
 	}
+
+	[Table("memory_image")]
+	public class TBImage
+	{
+		[PrimaryKey,AutoIncrement]
+		public int Id { get; set; }
+
+		[MaxLength(10)]
+		public int Value { get; set; }
+
+		[MaxLength(100)] // String com o nome da imagem.
+		public string Img { get; set; }
+
+
+	}
+
 		
 	//	Buscar em ordem aleatório (TESTAR)
 //	SELECT foo FROM bar

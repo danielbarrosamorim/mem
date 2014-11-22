@@ -1,0 +1,25 @@
+﻿Próximas atividades :
+
+
+1) Criar página para separar versões da lógica principal do aplicativo (número, cores, imagens)
+
+2) Criar lógica para reiniciar o jogo, sem a necessidade de sair da aplicação
+
+3) Criar lógica para exibir os cartões aleatoriamente
+
+4) Criar página com cartões em Cores
+
+5) Criar página com cartões com Imagens
+
+6) Criar página com cartões com Imagens da Web
+
+(OK) 7) CRIAR LÓGICA PARA ESPERAR POR 1,5 SEGUNDOS QUANDO O USUÁRIO ACERTAR O PAR.
+
+8) Adicionar lógica para "Falar" o cartão escolhido
+
+9) Adicionar globalização
+
+10) Adicionar arquitetura MVVM
+
+11)
+

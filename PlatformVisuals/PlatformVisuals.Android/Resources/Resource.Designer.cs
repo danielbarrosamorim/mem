@@ -47,16 +47,34 @@ namespace PlatformVisuals.Droid
 		{
 			
 			// aapt resource value: 0x7f020000
-			public const int ic_action_edit = 2130837504;
+			public const int big_ben = 2130837504;
 			
 			// aapt resource value: 0x7f020001
-			public const int ic_action_refresh = 2130837505;
+			public const int eiffel = 2130837505;
 			
 			// aapt resource value: 0x7f020002
-			public const int ic_action_search = 2130837506;
+			public const int ic_action_edit = 2130837506;
 			
 			// aapt resource value: 0x7f020003
-			public const int Icon = 2130837507;
+			public const int ic_action_refresh = 2130837507;
+			
+			// aapt resource value: 0x7f020004
+			public const int ic_action_search = 2130837508;
+			
+			// aapt resource value: 0x7f020005
+			public const int Icon = 2130837509;
+			
+			// aapt resource value: 0x7f020006
+			public const int london_eye = 2130837510;
+			
+			// aapt resource value: 0x7f020007
+			public const int london_museum = 2130837511;
+			
+			// aapt resource value: 0x7f020008
+			public const int louvre = 2130837512;
+			
+			// aapt resource value: 0x7f020009
+			public const int the_shard_view = 2130837513;
 			
 			static Drawable()
 			{

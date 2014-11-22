@@ -7,16 +7,14 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using System.Collections;
 
-
-
 namespace PlatformVisuals
 {	
-	public partial class MemoryView : ContentPage
+	public partial class MyTest : ContentPage 
 	{	
-		public MemoryView ()
+		public MyTest()
 		{
 			InitializeComponent ();
-		
+
 			// Load table : memory
 
 			//			 App.MemoryRepo.InsertPosition (10);
@@ -53,35 +51,29 @@ namespace PlatformVisuals
 		public Button UltButAtivo  ;
 		public Button PenUltButAtivo  ;
 		public bool match = false;
-		public int x = 0;
+		public int x = 0 ;
 
-		async Task RemoveMatched ()
-		{
-			await Task.Delay(800);
-			// KB:01 Falta lógica para desabilitar os botões!!!
-			// Se usuário clicar rapidamente a aplicação falha!
-			ButAtivo.IsVisible = false;
-			UltButAtivo.IsVisible = false;
-		}
 
-	
-//		void OnButtonClicked(object sender, EventArgs args)
-//		{
-//
-//			//Botao3.Text = args.ToString ();
-//		//	Botao3.Text = sender.Name.ToString ();
-//
-//			
-//		}
+		//		public Bu PosicaoAtiva ;
 
-//		public Task Ativacao ()
-//		{
-//			ButAtivo.IsVisible = false;
-//			UltButAtivo.IsVisible = false;
-//			//return true;
-//		}
-//
-		async void OnButtonClicked1(object sender, EventArgs args)
+
+		//		void OnButtonClicked(object sender, EventArgs args)
+		//		{
+		//
+		//			//Botao3.Text = args.ToString ();
+		//		//	Botao3.Text = sender.Name.ToString ();
+		//
+		//			
+		//		}
+
+		//		public Task Ativacao ()
+		//		{
+		//			ButAtivo.IsVisible = false;
+		//			UltButAtivo.IsVisible = false;
+		//			//return true;
+		//		}
+		//
+		void OnButtonClicked1(object sender, EventArgs args)
 		{
 
 			if (ButAtivo == null && UltButAtivo == null && PenUltButAtivo == null) {
@@ -109,8 +101,7 @@ namespace PlatformVisuals
 			Botao1.BorderWidth = 3 ;
 			Botao1.BorderColor = Color.Red;
 			Botao1.IsEnabled = false;
-			//Botao1.BackgroundColor = Color.Blue;
-			//Botao1.Image = "big_ben.jpg";
+			Botao1.Image = "big_ben.jpg";
 
 			//Botao1.
 			x = x + 1;
@@ -120,7 +111,17 @@ namespace PlatformVisuals
 
 				if (UltButAtivo.Text == ButAtivo.Text)
 				{
-					 RemoveMatched ();
+					//					Device.StartTimer (TimeSpan.FromMilliseconds (1000), async () => 
+					//						{
+					//							return Task.Run( Ativacao());
+					//						//	Ativacao ();
+					//						}
+
+					ButAtivo.IsVisible = false;
+					UltButAtivo.IsVisible = false;		
+
+
+					//	);
 				}
 			}
 
@@ -139,16 +140,16 @@ namespace PlatformVisuals
 				x = 1;
 
 			}
-//			else if (UltButAtivo != null && PenUltButAtivo != null && match == true)
-//			{
-//				PenUltButAtivo.BorderWidth = 0 ;
-//				PenUltButAtivo.BorderColor = Color.Accent;
-//				PenUltButAtivo.TextColor = Color.White;
-//			}
-				
+			//			else if (UltButAtivo != null && PenUltButAtivo != null && match == true)
+			//			{
+			//				PenUltButAtivo.BorderWidth = 0 ;
+			//				PenUltButAtivo.BorderColor = Color.Accent;
+			//				PenUltButAtivo.TextColor = Color.White;
+			//			}
+
 		}
-			
-		async void OnButtonClicked2(object sender, EventArgs args)
+//
+		void OnButtonClicked2(object sender, EventArgs args)
 		{
 
 			if (ButAtivo == null && UltButAtivo == null && PenUltButAtivo == null) {
@@ -188,10 +189,8 @@ namespace PlatformVisuals
 					//				Device.StartTimer (TimeSpan.FromSeconds (1), () => 
 					//					{
 					//match = true;
-//					ButAtivo.IsVisible = false;
-//					UltButAtivo.IsVisible = false;	
-
-					RemoveMatched ();
+					ButAtivo.IsVisible = false;
+					UltButAtivo.IsVisible = false;					
 					//					});
 				}
 			}
@@ -210,15 +209,15 @@ namespace PlatformVisuals
 
 				x = 1;
 			}
-//			else if (UltButAtivo != null && PenUltButAtivo != null && match == true)
-//			{
-//				PenUltButAtivo.BorderWidth = 0 ;
-//				PenUltButAtivo.BorderColor = Color.Accent;
-//				PenUltButAtivo.TextColor = Color.White;
-//			}
+			//			else if (UltButAtivo != null && PenUltButAtivo != null && match == true)
+			//			{
+			//				PenUltButAtivo.BorderWidth = 0 ;
+			//				PenUltButAtivo.BorderColor = Color.Accent;
+			//				PenUltButAtivo.TextColor = Color.White;
+			//			}
 		}
 
-		async void OnButtonClicked3(object sender, EventArgs args)
+		void OnButtonClicked3(object sender, EventArgs args)
 		{
 
 			if (ButAtivo == null && UltButAtivo == null && PenUltButAtivo == null) {
@@ -257,10 +256,8 @@ namespace PlatformVisuals
 				if (UltButAtivo.Text == ButAtivo.Text)
 				{
 					//match = true;
-//					ButAtivo.IsVisible = false;
-//					UltButAtivo.IsVisible = false;
-					 RemoveMatched ();
-
+					ButAtivo.IsVisible = false;
+					UltButAtivo.IsVisible = false;					
 				}
 			}
 
@@ -278,16 +275,16 @@ namespace PlatformVisuals
 
 				x = 1;
 			}
-//			else if (UltButAtivo != null && PenUltButAtivo != null && match == true)
-//			{
-//				PenUltButAtivo.BorderWidth = 0 ;
-//				PenUltButAtivo.BorderColor = Color.Accent;
-//				PenUltButAtivo.TextColor = Color.White;
-//			}
+			//			else if (UltButAtivo != null && PenUltButAtivo != null && match == true)
+			//			{
+			//				PenUltButAtivo.BorderWidth = 0 ;
+			//				PenUltButAtivo.BorderColor = Color.Accent;
+			//				PenUltButAtivo.TextColor = Color.White;
+			//			}
 
 		}
 
-		async void OnButtonClicked4(object sender, EventArgs args)
+		void OnButtonClicked4(object sender, EventArgs args)
 		{
 
 			if (ButAtivo == null && UltButAtivo == null && PenUltButAtivo == null) {
@@ -326,12 +323,8 @@ namespace PlatformVisuals
 				if (UltButAtivo.Text == ButAtivo.Text)
 				{
 					//match = true;
-//					ButAtivo.IsVisible = false;
-//					UltButAtivo.IsVisible = false;
-
-					 RemoveMatched ();
-
-
+					ButAtivo.IsVisible = false;
+					UltButAtivo.IsVisible = false;					
 				}
 			}
 
@@ -349,18 +342,18 @@ namespace PlatformVisuals
 
 				x = 1;
 			}
-//			else if (UltButAtivo != null && PenUltButAtivo != null && match == true)
-//			{
-//			    PenUltButAtivo.BorderWidth = 0 ;
-//				PenUltButAtivo.BorderColor = Color.Accent;
-//				PenUltButAtivo.TextColor = Color.White;
-//			}
+			//			else if (UltButAtivo != null && PenUltButAtivo != null && match == true)
+			//			{
+			//			    PenUltButAtivo.BorderWidth = 0 ;
+			//				PenUltButAtivo.BorderColor = Color.Accent;
+			//				PenUltButAtivo.TextColor = Color.White;
+			//			}
 
 
 
 		}
 
-		async void OnButtonClicked5(object sender, EventArgs args)
+		void OnButtonClicked5(object sender, EventArgs args)
 		{
 
 			if (ButAtivo == null && UltButAtivo == null && PenUltButAtivo == null) {
@@ -399,11 +392,8 @@ namespace PlatformVisuals
 				if (UltButAtivo.Text == ButAtivo.Text)
 				{
 					//match = true;
-//					ButAtivo.IsVisible = false;
-//					UltButAtivo.IsVisible = false;
-
-					 RemoveMatched ();
-
+					ButAtivo.IsVisible = false;
+					UltButAtivo.IsVisible = false;					
 				}
 			}
 
@@ -421,16 +411,16 @@ namespace PlatformVisuals
 
 				x = 1;
 			}
-//			else if (UltButAtivo != null && PenUltButAtivo != null && match == true)
-//			{
-//				PenUltButAtivo.BorderWidth = 0 ;
-//				PenUltButAtivo.BorderColor = Color.Accent;
-//				PenUltButAtivo.TextColor = Color.White;
-//			}
+			//			else if (UltButAtivo != null && PenUltButAtivo != null && match == true)
+			//			{
+			//				PenUltButAtivo.BorderWidth = 0 ;
+			//				PenUltButAtivo.BorderColor = Color.Accent;
+			//				PenUltButAtivo.TextColor = Color.White;
+			//			}
 
 		}
 
-		async void OnButtonClicked6(object sender, EventArgs args)
+		void OnButtonClicked6(object sender, EventArgs args)
 		{
 
 			if (ButAtivo == null && UltButAtivo == null && PenUltButAtivo == null) {
@@ -469,11 +459,8 @@ namespace PlatformVisuals
 				if (UltButAtivo.Text == ButAtivo.Text)
 				{
 					//match = true;
-//					ButAtivo.IsVisible = false;
-//					UltButAtivo.IsVisible = false;	
-
-					 RemoveMatched ();
-
+					ButAtivo.IsVisible = false;
+					UltButAtivo.IsVisible = false;					
 				}
 			}
 
@@ -492,16 +479,16 @@ namespace PlatformVisuals
 				x = 1;
 
 			}
-//			else if (UltButAtivo != null && PenUltButAtivo != null && match == true)
-//			{
-//				PenUltButAtivo.BorderWidth = 0 ;
-//				PenUltButAtivo.BorderColor = Color.Accent;
-//				PenUltButAtivo.TextColor = Color.White;
-//			}
+			//			else if (UltButAtivo != null && PenUltButAtivo != null && match == true)
+			//			{
+			//				PenUltButAtivo.BorderWidth = 0 ;
+			//				PenUltButAtivo.BorderColor = Color.Accent;
+			//				PenUltButAtivo.TextColor = Color.White;
+			//			}
 
 		}
 
-		async void OnButtonClicked7(object sender, EventArgs args)
+		void OnButtonClicked7(object sender, EventArgs args)
 		{
 			if (ButAtivo == null && UltButAtivo == null && PenUltButAtivo == null) {
 				//PenUltButAtivo = null;
@@ -537,11 +524,8 @@ namespace PlatformVisuals
 
 				if (UltButAtivo.Text == ButAtivo.Text)
 				{
-//					ButAtivo.IsVisible = false;
-//					UltButAtivo.IsVisible = false;
-
-					 RemoveMatched ();
-
+					ButAtivo.IsVisible = false;
+					UltButAtivo.IsVisible = false;					
 				}
 			}
 
@@ -564,7 +548,7 @@ namespace PlatformVisuals
 
 		}
 
-		async void OnButtonClicked8(object sender, EventArgs args)
+		void OnButtonClicked8(object sender, EventArgs args)
 		{
 			if (ButAtivo == null && UltButAtivo == null && PenUltButAtivo == null) {
 				//PenUltButAtivo = null;
@@ -600,11 +584,8 @@ namespace PlatformVisuals
 
 				if (UltButAtivo.Text == ButAtivo.Text)
 				{
-//					ButAtivo.IsVisible = false;
-//					UltButAtivo.IsVisible = false;	
-
-					 RemoveMatched ();
-
+					ButAtivo.IsVisible = false;
+					UltButAtivo.IsVisible = false;					
 				}
 			}
 
@@ -625,7 +606,7 @@ namespace PlatformVisuals
 			}
 		}
 
-		async void OnButtonClicked9(object sender, EventArgs args)
+		void OnButtonClicked9(object sender, EventArgs args)
 		{
 			if (ButAtivo == null && UltButAtivo == null && PenUltButAtivo == null) {
 				//PenUltButAtivo = null;
@@ -661,10 +642,8 @@ namespace PlatformVisuals
 
 				if (UltButAtivo.Text == ButAtivo.Text)
 				{
-//					ButAtivo.IsVisible = false;
-//					UltButAtivo.IsVisible = false;
-
-					 RemoveMatched ();
+					ButAtivo.IsVisible = false;
+					UltButAtivo.IsVisible = false;					
 				}
 			}
 
@@ -686,7 +665,7 @@ namespace PlatformVisuals
 
 		}
 
-		async void OnButtonClicked10(object sender, EventArgs args)
+		void OnButtonClicked10(object sender, EventArgs args)
 		{
 			if (ButAtivo == null && UltButAtivo == null && PenUltButAtivo == null) {
 				//PenUltButAtivo = null;
@@ -722,11 +701,8 @@ namespace PlatformVisuals
 
 				if (UltButAtivo.Text == ButAtivo.Text)
 				{
-//					ButAtivo.IsVisible = false;
-//					UltButAtivo.IsVisible = false;
-
-					 RemoveMatched ();
-
+					ButAtivo.IsVisible = false;
+					UltButAtivo.IsVisible = false;					
 				}
 			}
 
@@ -747,7 +723,7 @@ namespace PlatformVisuals
 			}
 		}
 
-		async void OnButtonClicked11(object sender, EventArgs args)
+		void OnButtonClicked11(object sender, EventArgs args)
 		{
 			if (ButAtivo == null && UltButAtivo == null && PenUltButAtivo == null) {
 				//PenUltButAtivo = null;
@@ -783,12 +759,8 @@ namespace PlatformVisuals
 
 				if (UltButAtivo.Text == ButAtivo.Text)
 				{
-//					ButAtivo.IsVisible = false;
-//					UltButAtivo.IsVisible = false;	
-
-					 RemoveMatched ();
-
-
+					ButAtivo.IsVisible = false;
+					UltButAtivo.IsVisible = false;					
 				}
 			}
 
@@ -809,7 +781,7 @@ namespace PlatformVisuals
 			}
 		}
 
-		async void OnButtonClicked12(object sender, EventArgs args)
+		void OnButtonClicked12(object sender, EventArgs args)
 		{
 			if (ButAtivo == null && UltButAtivo == null && PenUltButAtivo == null) {
 				//PenUltButAtivo = null;
@@ -845,10 +817,8 @@ namespace PlatformVisuals
 
 				if (UltButAtivo.Text == ButAtivo.Text)
 				{
-//					ButAtivo.IsVisible = false;
-//					UltButAtivo.IsVisible = false;	
-
-					 RemoveMatched ();
+					ButAtivo.IsVisible = false;
+					UltButAtivo.IsVisible = false;					
 				}
 			}
 

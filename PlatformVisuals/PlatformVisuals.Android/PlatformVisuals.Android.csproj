@@ -72,6 +72,10 @@
     <Reference Include="SQLite.Net.Platform.XamarinAndroid">
       <HintPath>..\..\packages\SQLite.Net.Platform.XamarinAndroid.2.4.1\lib\MonoAndroid\SQLite.Net.Platform.XamarinAndroid.dll</HintPath>
     </Reference>
+    <Reference Include="ExifLib">
+      <HintPath>..\..\packages\ExifLib.PCL.1.0.0\lib\portable-net45+sl50+win+WindowsPhoneApp81+wp80+MonoAndroid10+MonoTouch10\ExifLib.dll</HintPath>
+    </Reference>
+    <Reference Include="Mono.Android.Export" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="MainActivity.cs" />
@@ -86,6 +90,12 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\Drawable\Icon.png" />
+    <AndroidResource Include="Resources\Drawable\the_shard_view.JPG" />
+    <AndroidResource Include="Resources\Drawable\big_ben.jpg" />
+    <AndroidResource Include="Resources\Drawable\eiffel.jpg" />
+    <AndroidResource Include="Resources\Drawable\london_eye.jpg" />
+    <AndroidResource Include="Resources\Drawable\london_museum.jpg" />
+    <AndroidResource Include="Resources\Drawable\louvre.jpg" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Properties\AndroidManifest.xml" />
